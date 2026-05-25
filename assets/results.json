@@ -27,18 +27,18 @@
       "Ratings as of May 8-21, 2026 (Cook 5/13, Sabato 5/8, Inside Elections 5/21)."
     ],
     "n_trials": 20000,
-    "generated_at": "2026-05-25T18:43:53.020Z"
+    "generated_at": "2026-05-25T18:55:56.132Z"
   },
   "summary": {
     "house": {
-      "p_d_wins": 0.4618,
-      "p_r_wins": 0.5382,
-      "d_seats_mean": 215.1167,
-      "d_seats_median": 216,
-      "d_seats_p10": 192,
-      "d_seats_p90": 237,
-      "d_seats_p05": 184,
-      "d_seats_p95": 243
+      "p_d_wins": 0.44935,
+      "p_r_wins": 0.55065,
+      "d_seats_mean": 214.25505,
+      "d_seats_median": 215,
+      "d_seats_p10": 189,
+      "d_seats_p90": 238,
+      "d_seats_p05": 181,
+      "d_seats_p95": 244
     },
     "senate": {
       "p_d_wins": 0.4587,
@@ -51,10 +51,10 @@
       "d_seats_p95": 54
     },
     "joint": {
-      "p_d_trifecta": 0.3071,
-      "p_d_house_only": 0.1547,
-      "p_d_senate_only": 0.1516,
-      "p_r_trifecta": 0.3866
+      "p_d_trifecta": 0.30045,
+      "p_d_house_only": 0.1489,
+      "p_d_senate_only": 0.15825,
+      "p_r_trifecta": 0.3924
     },
     "national_swing": {
       "mean": 0.026761422157145966,
@@ -66,152 +66,168 @@
   "distributions": {
     "house_d_seats": [
       {
-        "x": 146,
+        "x": 142,
         "y": 0.00005
+      },
+      {
+        "x": 143,
+        "y": 0.00005
+      },
+      {
+        "x": 144,
+        "y": 0.00005
+      },
+      {
+        "x": 145,
+        "y": 0.0001
+      },
+      {
+        "x": 146,
+        "y": 0.0002
       },
       {
         "x": 147,
-        "y": 0.00005
+        "y": 0.0002
       },
       {
         "x": 148,
-        "y": 0.00005
+        "y": 0.0003
       },
       {
         "x": 149,
-        "y": 0.0001
+        "y": 0.0002
       },
       {
         "x": 150,
-        "y": 0.0002
-      },
-      {
-        "x": 151,
-        "y": 0.0002
-      },
-      {
-        "x": 152,
-        "y": 0.0003
-      },
-      {
-        "x": 153,
-        "y": 0.0002
-      },
-      {
-        "x": 154,
         "y": 0.00015
       },
       {
-        "x": 155,
+        "x": 151,
         "y": 0.00035
       },
       {
-        "x": 156,
-        "y": 0.0001
+        "x": 152,
+        "y": 0.00005
       },
       {
-        "x": 157,
+        "x": 153,
         "y": 0.00045
       },
       {
-        "x": 158,
+        "x": 154,
         "y": 0.0004
       },
       {
-        "x": 159,
-        "y": 0.00035
+        "x": 155,
+        "y": 0.0004
       },
       {
-        "x": 160,
+        "x": 156,
         "y": 0.0003
       },
       {
-        "x": 161,
+        "x": 157,
         "y": 0.00065
       },
       {
-        "x": 162,
-        "y": 0.0007
-      },
-      {
-        "x": 163,
+        "x": 158,
         "y": 0.0005
       },
       {
-        "x": 164,
-        "y": 0.00095
+        "x": 159,
+        "y": 0.00055
       },
       {
-        "x": 165,
-        "y": 0.00065
+        "x": 160,
+        "y": 0.00105
       },
       {
-        "x": 166,
+        "x": 161,
+        "y": 0.00055
+      },
+      {
+        "x": 162,
         "y": 0.0009
       },
       {
-        "x": 167,
-        "y": 0.0012
+        "x": 163,
+        "y": 0.00085
       },
       {
-        "x": 168,
+        "x": 164,
+        "y": 0.00155
+      },
+      {
+        "x": 165,
         "y": 0.00115
       },
       {
-        "x": 169,
-        "y": 0.00125
-      },
-      {
-        "x": 170,
+        "x": 166,
         "y": 0.00165
       },
       {
-        "x": 171,
-        "y": 0.0013
+        "x": 167,
+        "y": 0.0011
       },
       {
-        "x": 172,
+        "x": 168,
         "y": 0.00185
       },
       {
-        "x": 173,
+        "x": 169,
         "y": 0.0022
       },
       {
-        "x": 174,
-        "y": 0.00165
+        "x": 170,
+        "y": 0.0014
       },
       {
-        "x": 175,
+        "x": 171,
         "y": 0.0028
       },
       {
+        "x": 172,
+        "y": 0.0015
+      },
+      {
+        "x": 173,
+        "y": 0.002
+      },
+      {
+        "x": 174,
+        "y": 0.00215
+      },
+      {
+        "x": 175,
+        "y": 0.0033
+      },
+      {
         "x": 176,
-        "y": 0.0016
+        "y": 0.00355
       },
       {
         "x": 177,
-        "y": 0.00195
-      },
-      {
-        "x": 178,
-        "y": 0.0026
-      },
-      {
-        "x": 179,
-        "y": 0.00375
-      },
-      {
-        "x": 180,
-        "y": 0.00345
-      },
-      {
-        "x": 181,
         "y": 0.0037
       },
       {
-        "x": 182,
+        "x": 178,
+        "y": 0.0033
+      },
+      {
+        "x": 179,
         "y": 0.00365
+      },
+      {
+        "x": 180,
+        "y": 0.0047
+      },
+      {
+        "x": 181,
+        "y": 0.0045
+      },
+      {
+        "x": 182,
+        "y": 0.00465
       },
       {
         "x": 183,
@@ -219,263 +235,263 @@
       },
       {
         "x": 184,
-        "y": 0.00465
+        "y": 0.0053
       },
       {
         "x": 185,
-        "y": 0.00485
+        "y": 0.0052
       },
       {
         "x": 186,
-        "y": 0.00535
+        "y": 0.0071
       },
       {
         "x": 187,
-        "y": 0.0049
+        "y": 0.0053
       },
       {
         "x": 188,
-        "y": 0.00575
+        "y": 0.00665
       },
       {
         "x": 189,
-        "y": 0.00615
-      },
-      {
-        "x": 190,
         "y": 0.007
       },
       {
+        "x": 190,
+        "y": 0.00725
+      },
+      {
         "x": 191,
-        "y": 0.0066
+        "y": 0.00975
       },
       {
         "x": 192,
-        "y": 0.0073
+        "y": 0.00975
       },
       {
         "x": 193,
-        "y": 0.008
+        "y": 0.00925
       },
       {
         "x": 194,
-        "y": 0.0095
+        "y": 0.01135
       },
       {
         "x": 195,
-        "y": 0.0117
+        "y": 0.01185
       },
       {
         "x": 196,
-        "y": 0.0105
+        "y": 0.0111
       },
       {
         "x": 197,
-        "y": 0.01255
+        "y": 0.01155
       },
       {
         "x": 198,
-        "y": 0.0115
+        "y": 0.01205
       },
       {
         "x": 199,
-        "y": 0.01265
+        "y": 0.0149
       },
       {
         "x": 200,
-        "y": 0.01405
+        "y": 0.0135
       },
       {
         "x": 201,
-        "y": 0.01385
+        "y": 0.0139
       },
       {
         "x": 202,
-        "y": 0.0168
+        "y": 0.0158
       },
       {
         "x": 203,
-        "y": 0.01425
+        "y": 0.0157
       },
       {
         "x": 204,
-        "y": 0.0164
+        "y": 0.01555
       },
       {
         "x": 205,
-        "y": 0.0174
+        "y": 0.0169
       },
       {
         "x": 206,
-        "y": 0.01715
+        "y": 0.0186
       },
       {
         "x": 207,
-        "y": 0.0203
+        "y": 0.0194
       },
       {
         "x": 208,
-        "y": 0.0208
+        "y": 0.0185
       },
       {
         "x": 209,
-        "y": 0.0204
+        "y": 0.0206
       },
       {
         "x": 210,
-        "y": 0.02205
+        "y": 0.02015
       },
       {
         "x": 211,
-        "y": 0.02355
+        "y": 0.02205
       },
       {
         "x": 212,
-        "y": 0.02245
+        "y": 0.0201
       },
       {
         "x": 213,
-        "y": 0.02285
+        "y": 0.01995
       },
       {
         "x": 214,
-        "y": 0.02395
+        "y": 0.02115
       },
       {
         "x": 215,
-        "y": 0.0245
+        "y": 0.0227
       },
       {
         "x": 216,
-        "y": 0.02515
+        "y": 0.02405
       },
       {
         "x": 217,
-        "y": 0.02545
+        "y": 0.02315
       },
       {
         "x": 218,
-        "y": 0.02615
+        "y": 0.02265
       },
       {
         "x": 219,
-        "y": 0.025
+        "y": 0.02295
       },
       {
         "x": 220,
-        "y": 0.0247
+        "y": 0.0233
       },
       {
         "x": 221,
-        "y": 0.02385
+        "y": 0.022
       },
       {
         "x": 222,
-        "y": 0.02365
+        "y": 0.02265
       },
       {
         "x": 223,
-        "y": 0.0228
+        "y": 0.01835
       },
       {
         "x": 224,
-        "y": 0.0207
+        "y": 0.0186
       },
       {
         "x": 225,
-        "y": 0.0203
+        "y": 0.01875
       },
       {
         "x": 226,
-        "y": 0.01895
+        "y": 0.0183
       },
       {
         "x": 227,
-        "y": 0.01905
+        "y": 0.0176
       },
       {
         "x": 228,
-        "y": 0.0173
+        "y": 0.0162
       },
       {
         "x": 229,
-        "y": 0.0153
+        "y": 0.01595
       },
       {
         "x": 230,
-        "y": 0.01685
+        "y": 0.0146
       },
       {
         "x": 231,
-        "y": 0.01305
+        "y": 0.01515
       },
       {
         "x": 232,
-        "y": 0.01435
+        "y": 0.0128
       },
       {
         "x": 233,
-        "y": 0.01375
+        "y": 0.0128
       },
       {
         "x": 234,
-        "y": 0.01415
+        "y": 0.01315
       },
       {
         "x": 235,
-        "y": 0.01165
+        "y": 0.0128
       },
       {
         "x": 236,
-        "y": 0.01015
+        "y": 0.0112
       },
       {
         "x": 237,
-        "y": 0.01045
+        "y": 0.01005
       },
       {
         "x": 238,
-        "y": 0.01035
-      },
-      {
-        "x": 239,
         "y": 0.01055
       },
       {
+        "x": 239,
+        "y": 0.0104
+      },
+      {
         "x": 240,
-        "y": 0.0087
+        "y": 0.0072
       },
       {
         "x": 241,
-        "y": 0.00735
+        "y": 0.0097
       },
       {
         "x": 242,
-        "y": 0.00715
+        "y": 0.008
       },
       {
         "x": 243,
-        "y": 0.00765
+        "y": 0.0079
       },
       {
         "x": 244,
-        "y": 0.00735
+        "y": 0.00665
       },
       {
         "x": 245,
-        "y": 0.00675
+        "y": 0.00785
       },
       {
         "x": 246,
-        "y": 0.00495
+        "y": 0.00635
       },
       {
         "x": 247,
-        "y": 0.0048
+        "y": 0.0054
       },
       {
         "x": 248,
-        "y": 0.00355
+        "y": 0.0049
       },
       {
         "x": 249,
@@ -483,102 +499,106 @@
       },
       {
         "x": 250,
-        "y": 0.00275
+        "y": 0.0036
       },
       {
         "x": 251,
-        "y": 0.00265
+        "y": 0.0028
       },
       {
         "x": 252,
-        "y": 0.0024
+        "y": 0.00285
       },
       {
         "x": 253,
-        "y": 0.00175
+        "y": 0.0025
       },
       {
         "x": 254,
-        "y": 0.0013
+        "y": 0.00165
       },
       {
         "x": 255,
-        "y": 0.0009
+        "y": 0.00125
       },
       {
         "x": 256,
-        "y": 0.0008
+        "y": 0.001
       },
       {
         "x": 257,
-        "y": 0.0007
+        "y": 0.0008
       },
       {
         "x": 258,
-        "y": 0.00065
+        "y": 0.00095
       },
       {
         "x": 259,
-        "y": 0.00055
-      },
-      {
-        "x": 260,
-        "y": 0.00035
-      },
-      {
-        "x": 261,
         "y": 0.0005
       },
       {
+        "x": 260,
+        "y": 0.00065
+      },
+      {
+        "x": 261,
+        "y": 0.0004
+      },
+      {
         "x": 262,
-        "y": 0.0002
+        "y": 0.00045
       },
       {
         "x": 263,
-        "y": 0.00025
+        "y": 0.00015
       },
       {
         "x": 264,
-        "y": 0.00025
-      },
-      {
-        "x": 265,
-        "y": 0.0002
-      },
-      {
-        "x": 266,
         "y": 0.0003
       },
       {
+        "x": 265,
+        "y": 0.00025
+      },
+      {
+        "x": 266,
+        "y": 0.0002
+      },
+      {
         "x": 267,
-        "y": 0.0001
+        "y": 0.0003
       },
       {
         "x": 268,
-        "y": 0.00005
+        "y": 0.0001
       },
       {
         "x": 269,
         "y": 0.00005
       },
       {
-        "x": 271,
-        "y": 0.00015
+        "x": 270,
+        "y": 0.00005
       },
       {
         "x": 272,
-        "y": 0.00005
+        "y": 0.00015
       },
       {
         "x": 273,
         "y": 0.00005
       },
       {
-        "x": 277,
+        "x": 274,
         "y": 0.00005
       },
       {
         "x": 278,
+        "y": 0.00005
+      },
+      {
+        "x": 279,
         "y": 0.00005
       }
     ],
@@ -1146,12 +1166,12 @@
       {
         "id": "CA-03",
         "chamber": "house",
-        "incumbent_party": "R",
-        "rating_consensus": "Likely R",
-        "rating_p_d_win": 0.154,
-        "expected_margin": -4.8,
-        "model_p_d_win": 0.13145,
-        "note": "PVI R+2"
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.687,
+        "expected_margin": 2.59,
+        "model_p_d_win": 0.70185,
+        "note": "Prop 50 redraw flips Kiley R seat"
       },
       {
         "id": "CA-04",
@@ -1516,22 +1536,22 @@
       {
         "id": "CA-40",
         "chamber": "house",
-        "incumbent_party": "R",
-        "rating_consensus": "Lean R",
-        "rating_p_d_win": 0.236,
-        "expected_margin": -3.4,
-        "model_p_d_win": 0.21425,
-        "note": "PVI R+1"
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.687,
+        "expected_margin": 2.59,
+        "model_p_d_win": 0.69945,
+        "note": "Prop 50 redraw flips Kim R seat"
       },
       {
         "id": "CA-41",
         "chamber": "house",
-        "incumbent_party": "R",
-        "rating_consensus": "Likely R",
-        "rating_p_d_win": 0.094,
-        "expected_margin": -6.2,
-        "model_p_d_win": 0.071,
-        "note": "PVI R+3"
+        "incumbent_party": "D",
+        "rating_consensus": "Tilt D",
+        "rating_p_d_win": 0.647,
+        "expected_margin": 2,
+        "model_p_d_win": 0.6606,
+        "note": "Prop 50 redraw flips Calvert R seat"
       },
       {
         "id": "CA-42",
@@ -3146,12 +3166,12 @@
       {
         "id": "MO-05",
         "chamber": "house",
-        "incumbent_party": "D",
-        "rating_consensus": "Solid D",
-        "rating_p_d_win": 1,
-        "expected_margin": 18.8,
-        "model_p_d_win": 1,
-        "note": "PVI D+12"
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.313,
+        "expected_margin": -2.59,
+        "model_p_d_win": 0.3018,
+        "note": "MO redraw flips Cleaver D seat (adopted 9/28/25)"
       },
       {
         "id": "MO-06",
@@ -4506,12 +4526,12 @@
       {
         "id": "TN-09",
         "chamber": "house",
-        "incumbent_party": "D",
-        "rating_consensus": "Solid D",
-        "rating_p_d_win": 1,
-        "expected_margin": 34.2,
-        "model_p_d_win": 1,
-        "note": "PVI D+23"
+        "incumbent_party": "R",
+        "rating_consensus": "Tilt R",
+        "rating_p_d_win": 0.353,
+        "expected_margin": -2,
+        "model_p_d_win": 0.34765,
+        "note": "TN redraw splits Memphis — flips Cohen D seat (adopted 5/7/26)"
       },
       {
         "id": "TX-01",
@@ -4596,12 +4616,12 @@
       {
         "id": "TX-09",
         "chamber": "house",
-        "incumbent_party": "D",
-        "rating_consensus": "Solid D",
-        "rating_p_d_win": 1,
-        "expected_margin": 35.6,
-        "model_p_d_win": 1,
-        "note": "PVI D+24"
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.173,
+        "expected_margin": -4.44,
+        "model_p_d_win": 0.15165,
+        "note": "TX redraw dismantles Green coalition seat — was D"
       },
       {
         "id": "TX-10",
@@ -4826,12 +4846,12 @@
       {
         "id": "TX-32",
         "chamber": "house",
-        "incumbent_party": "D",
-        "rating_consensus": "Solid D",
-        "rating_p_d_win": 1,
-        "expected_margin": 21.6,
-        "model_p_d_win": 1,
-        "note": "PVI D+14"
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.173,
+        "expected_margin": -4.44,
+        "model_p_d_win": 0.15575,
+        "note": "TX redraw dismantles Johnson coalition seat — was D"
       },
       {
         "id": "TX-33",
@@ -4906,12 +4926,12 @@
       {
         "id": "UT-02",
         "chamber": "house",
-        "incumbent_party": "R",
-        "rating_consensus": "Solid R",
-        "rating_p_d_win": 0,
-        "expected_margin": -16,
-        "model_p_d_win": 0,
-        "note": "PVI R+10"
+        "incumbent_party": "D",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.54,
+        "expected_margin": 0.6,
+        "model_p_d_win": 0.5363,
+        "note": "UT court-ordered redraw flips Maloy R seat (adopted 11/10/25)"
       },
       {
         "id": "UT-03",
@@ -5621,17 +5641,7 @@
     {
       "id": "MI-08",
       "rating_consensus": "Tilt D",
-      "p_decisive": 0.0332
-    },
-    {
-      "id": "PA-08",
-      "rating_consensus": "Tilt R",
-      "p_decisive": 0.0274
-    },
-    {
-      "id": "MI-10",
-      "rating_consensus": "Tilt R",
-      "p_decisive": 0.0248
+      "p_decisive": 0.0276
     },
     {
       "id": "CO-08",
@@ -5639,54 +5649,14 @@
       "p_decisive": 0.0244
     },
     {
-      "id": "OH-01",
-      "rating_consensus": "Tilt D",
-      "p_decisive": 0.024
-    },
-    {
-      "id": "FL-22",
-      "rating_consensus": "Lean R",
-      "p_decisive": 0.0234
-    },
-    {
-      "id": "IA-03",
+      "id": "PA-08",
       "rating_consensus": "Tilt R",
-      "p_decisive": 0.0228
-    },
-    {
-      "id": "VA-01",
-      "rating_consensus": "Lean R",
-      "p_decisive": 0.0228
-    },
-    {
-      "id": "MI-07",
-      "rating_consensus": "Toss-up",
-      "p_decisive": 0.0226
-    },
-    {
-      "id": "NJ-07",
-      "rating_consensus": "Toss-up",
-      "p_decisive": 0.0226
-    },
-    {
-      "id": "AZ-06",
-      "rating_consensus": "Toss-up",
-      "p_decisive": 0.0224
-    },
-    {
-      "id": "NM-02",
-      "rating_consensus": "Lean D",
-      "p_decisive": 0.0224
-    },
-    {
-      "id": "OH-13",
-      "rating_consensus": "Lean D",
-      "p_decisive": 0.0224
+      "p_decisive": 0.023
     },
     {
       "id": "FL-14",
       "rating_consensus": "Tilt R",
-      "p_decisive": 0.022
+      "p_decisive": 0.0226
     },
     {
       "id": "CA-22",
@@ -5694,54 +5664,104 @@
       "p_decisive": 0.0216
     },
     {
-      "id": "CA-48",
-      "rating_consensus": "Lean D",
-      "p_decisive": 0.0212
-    },
-    {
-      "id": "NY-17",
+      "id": "MI-10",
       "rating_consensus": "Tilt R",
-      "p_decisive": 0.021
+      "p_decisive": 0.0216
     },
     {
-      "id": "PA-07",
-      "rating_consensus": "Toss-up",
-      "p_decisive": 0.021
+      "id": "NM-02",
+      "rating_consensus": "Lean D",
+      "p_decisive": 0.0216
     },
     {
-      "id": "PA-10",
-      "rating_consensus": "Toss-up",
-      "p_decisive": 0.021
+      "id": "WA-03",
+      "rating_consensus": "Tilt D",
+      "p_decisive": 0.0216
     },
     {
-      "id": "FL-25",
-      "rating_consensus": "Toss-up",
-      "p_decisive": 0.0208
-    },
-    {
-      "id": "MT-01",
+      "id": "VA-01",
       "rating_consensus": "Lean R",
-      "p_decisive": 0.0208
+      "p_decisive": 0.0214
     },
     {
-      "id": "OH-09",
+      "id": "AZ-06",
       "rating_consensus": "Toss-up",
+      "p_decisive": 0.021
+    },
+    {
+      "id": "CA-41",
+      "rating_consensus": "Tilt D",
       "p_decisive": 0.0204
-    },
-    {
-      "id": "IA-01",
-      "rating_consensus": "Toss-up",
-      "p_decisive": 0.0202
-    },
-    {
-      "id": "AZ-01",
-      "rating_consensus": "Toss-up",
-      "p_decisive": 0.0196
     },
     {
       "id": "NC-11",
       "rating_consensus": "Lean R",
+      "p_decisive": 0.0202
+    },
+    {
+      "id": "MI-07",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.02
+    },
+    {
+      "id": "FL-25",
+      "rating_consensus": "Toss-up",
       "p_decisive": 0.0196
+    },
+    {
+      "id": "OH-01",
+      "rating_consensus": "Tilt D",
+      "p_decisive": 0.0196
+    },
+    {
+      "id": "NJ-07",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0194
+    },
+    {
+      "id": "NY-17",
+      "rating_consensus": "Tilt R",
+      "p_decisive": 0.0194
+    },
+    {
+      "id": "PA-07",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0194
+    },
+    {
+      "id": "AZ-01",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0192
+    },
+    {
+      "id": "PA-10",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0188
+    },
+    {
+      "id": "IA-03",
+      "rating_consensus": "Tilt R",
+      "p_decisive": 0.0186
+    },
+    {
+      "id": "TN-09",
+      "rating_consensus": "Tilt R",
+      "p_decisive": 0.0186
+    },
+    {
+      "id": "UT-02",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0186
+    },
+    {
+      "id": "FL-22",
+      "rating_consensus": "Lean R",
+      "p_decisive": 0.0184
+    },
+    {
+      "id": "WI-03",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0184
     }
   ]
 }

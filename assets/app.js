@@ -88,12 +88,12 @@ Chart.defaults.color = C.muted;
 Chart.defaults.font.family = 'ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, monospace';
 Chart.defaults.font.size = 11;
 
-function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax){
-  const ctx = document.getElementById(canvasId);
+function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins){
+  const canvas = document.getElementById(canvasId);
   const labels = data.map(d => d.x);
   const values = data.map(d => d.y);
   const bgs = labels.map(x => x >= threshold ? dColor : rColor);
-  new Chart(ctx, {
+  const chart = new Chart(canvas, {
     type: 'bar',
     data: { labels, datasets: [{ data: values, backgroundColor: bgs, borderWidth: 0, barPercentage: 1.02, categoryPercentage: 1.0 }] },
     options: {
@@ -108,7 +108,6 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax){
             label: (item) => (item.raw * 100).toFixed(2) + '% of trials',
           }
         },
-        annotation: {}
       },
       scales: {
         x: { min: xMin, max: xMax, ticks: { maxTicksLimit: 12, autoSkip: true }, grid: { color: C.line, display: false } },
@@ -116,40 +115,72 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax){
       },
     },
     plugins: [{
-      id: 'thresholdLine',
+      id: 'majorityLine',
       afterDraw(chart){
+        // Solid, prominent vertical line at the threshold
         const xScale = chart.scales.x;
         const yScale = chart.scales.y;
         const xPos = xScale.getPixelForValue(threshold);
-        const ctx = chart.ctx;
-        ctx.save();
-        ctx.strokeStyle = C.ink;
-        ctx.lineWidth = 2;
-        ctx.setLineDash([4, 4]);
-        ctx.beginPath();
-        ctx.moveTo(xPos, yScale.top);
-        ctx.lineTo(xPos, yScale.bottom);
-        ctx.stroke();
-        ctx.setLineDash([]);
-        ctx.fillStyle = C.ink;
-        ctx.font = 'bold 11px ui-monospace, monospace';
-        ctx.textAlign = 'left';
-        ctx.fillText(`${threshold} = control`, xPos + 6, yScale.top + 12);
-        ctx.restore();
+        const cx = chart.ctx;
+        cx.save();
+        cx.strokeStyle = C.ink;
+        cx.lineWidth = 3;
+        cx.beginPath();
+        cx.moveTo(xPos, yScale.top);
+        cx.lineTo(xPos, yScale.bottom);
+        cx.stroke();
+        cx.restore();
+        // Position the HTML overlay labels using the line's pixel x
+        positionMajorityOverlay(canvasId, xPos, xScale.left, xScale.right);
       }
     }]
   });
+
+  // Wrap the canvas in a positioned container; build the HTML overlay (chip +
+  // R/D labels) inside that container so the labels sit ONLY over the plot
+  // area, not the title or caption above it.
+  if (!canvas.parentElement.classList.contains('canvas-pos')){
+    const posWrap = document.createElement('div');
+    posWrap.className = 'canvas-pos';
+    canvas.parentNode.insertBefore(posWrap, canvas);
+    posWrap.appendChild(canvas);
+  }
+  const posWrap = canvas.parentElement;
+  const overlay = document.createElement('div');
+  overlay.className = 'maj-overlay';
+  overlay.dataset.canvasId = canvasId;
+  overlay.innerHTML = `
+    <div class="maj-chip">${threshold} for majority</div>
+    <div class="maj-side maj-r" style="background:${rColor}">◀ R MAJORITY${pDwins!=null?` <b>${pct(1-pDwins)}</b>`:''}</div>
+    <div class="maj-side maj-d" style="background:${dColor}">${pDwins!=null?`<b>${pct(pDwins)}</b> `:''}D MAJORITY ▶</div>
+  `;
+  posWrap.appendChild(overlay);
+}
+
+// The plugin tells us the pixel-x of the threshold line in canvas-internal
+// coords.  Translate to CSS coords by ratioing against canvas internal width.
+function positionMajorityOverlay(canvasId, xPx, plotLeft, plotRight){
+  const canvas = document.getElementById(canvasId);
+  const overlay = canvas.parentElement.querySelector(`.maj-overlay[data-canvas-id="${canvasId}"]`);
+  if (!overlay) return;
+  const dpr = canvas.width / canvas.clientWidth;
+  const xCss = xPx / dpr;
+  const leftCss = plotLeft / dpr;
+  const rightCss = plotRight / dpr;
+  overlay.style.setProperty('--maj-x', xCss + 'px');
+  overlay.style.setProperty('--plot-left', leftCss + 'px');
+  overlay.style.setProperty('--plot-right', rightCss + 'px');
 }
 
 // House distribution — center on 218
 const houseDist = res.distributions.house_d_seats;
-distChart('chart-house', houseDist, 218, C.d, C.r, 170, 260);
+distChart('chart-house', houseDist, 218, C.d, C.r, 170, 260, summary.house.p_d_wins);
 document.getElementById('dist-h-median').textContent = summary.house.d_seats_median;
 document.getElementById('dist-h-mean').textContent = summary.house.d_seats_mean.toFixed(1);
 
 // Senate distribution — center on 51
 const senateDist = res.distributions.senate_d_seats;
-distChart('chart-senate', senateDist, 51, C.d, C.r, 42, 58);
+distChart('chart-senate', senateDist, 51, C.d, C.r, 42, 58, summary.senate.p_d_wins);
 document.getElementById('dist-s-median').textContent = summary.senate.d_seats_median;
 document.getElementById('dist-s-mean').textContent = summary.senate.d_seats_mean.toFixed(1);
 

@@ -257,6 +257,44 @@ pre{
   font-size:10px;
 }
 
+/* canvas wrapper used to anchor the majority-line overlay */
+.canvas-pos{position:relative;width:100%}
+.canvas-pos canvas{display:block}
+
+/* majority-line overlay for distribution charts */
+.maj-overlay{
+  position:absolute;left:0;right:0;top:0;height:100%;
+  pointer-events:none;font-family:var(--mono);
+}
+.maj-overlay .maj-chip{
+  position:absolute;
+  left:calc(var(--maj-x, 50%));
+  top:6px;
+  transform:translateX(-50%);
+  background:var(--ctp-text);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.04em;
+  padding:5px 10px;border-radius:4px;
+  white-space:nowrap;
+  box-shadow:0 2px 6px rgba(76,79,105,.2);
+}
+.maj-overlay .maj-chip::after{
+  content:'';position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:var(--ctp-text);border-bottom:0;
+}
+.maj-overlay .maj-side{
+  position:absolute;top:42px;
+  color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;
+  padding:4px 9px;border-radius:3px;white-space:nowrap;
+  box-shadow:0 1px 3px rgba(76,79,105,.15);
+}
+.maj-overlay .maj-r{
+  right:calc(100% - var(--maj-x, 50%) + 14px);
+}
+.maj-overlay .maj-d{
+  left:calc(var(--maj-x, 50%) + 14px);
+}
+.maj-overlay .maj-side b{font-weight:800;letter-spacing:.02em}
+
 /* senate cartogram */
 #senate-cartogram{
   font-size:12px;line-height:1.1;

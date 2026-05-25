@@ -386,17 +386,19 @@
     {
       "id": "CA-03",
       "chamber": "house",
-      "incumbent_party": "R",
+      "incumbent_party": "D",
       "open": false,
-      "expected_margin": -4.8,
-      "sigma_race": 2.5,
-      "elasticity": 0.85,
-      "rating_consensus": "Likely R",
-      "rating_p_d_win": 0.154,
+      "expected_margin": 2.59,
+      "sigma_race": 3.5,
+      "elasticity": 0.88,
+      "rating_consensus": "Lean D",
+      "rating_p_d_win": 0.687,
       "rating_labels": [
-        "PVI-derived"
+        "Lean D",
+        "Lean D",
+        "Tilt D"
       ],
-      "note": "PVI R+2"
+      "note": "Prop 50 redraw flips Kiley R seat"
     },
     {
       "id": "CA-04",
@@ -947,32 +949,36 @@
     {
       "id": "CA-40",
       "chamber": "house",
-      "incumbent_party": "R",
+      "incumbent_party": "D",
       "open": false,
-      "expected_margin": -3.4,
-      "sigma_race": 2.5,
-      "elasticity": 0.85,
-      "rating_consensus": "Lean R",
-      "rating_p_d_win": 0.236,
+      "expected_margin": 2.59,
+      "sigma_race": 3.5,
+      "elasticity": 0.88,
+      "rating_consensus": "Lean D",
+      "rating_p_d_win": 0.687,
       "rating_labels": [
-        "PVI-derived"
+        "Lean D",
+        "Lean D",
+        "Tilt D"
       ],
-      "note": "PVI R+1"
+      "note": "Prop 50 redraw flips Kim R seat"
     },
     {
       "id": "CA-41",
       "chamber": "house",
-      "incumbent_party": "R",
+      "incumbent_party": "D",
       "open": false,
-      "expected_margin": -6.2,
-      "sigma_race": 2.5,
-      "elasticity": 0.85,
-      "rating_consensus": "Likely R",
-      "rating_p_d_win": 0.094,
+      "expected_margin": 2,
+      "sigma_race": 3.5,
+      "elasticity": 0.88,
+      "rating_consensus": "Tilt D",
+      "rating_p_d_win": 0.647,
       "rating_labels": [
-        "PVI-derived"
+        "Lean D",
+        "Lean D",
+        "Toss-up"
       ],
-      "note": "PVI R+3"
+      "note": "Prop 50 redraw flips Calvert R seat"
     },
     {
       "id": "CA-42",
@@ -3420,17 +3426,19 @@
     {
       "id": "MO-05",
       "chamber": "house",
-      "incumbent_party": "D",
+      "incumbent_party": "R",
       "open": false,
-      "expected_margin": 18.8,
-      "sigma_race": 1.2,
-      "elasticity": 0.85,
-      "rating_consensus": "Solid D",
-      "rating_p_d_win": 1,
+      "expected_margin": -2.59,
+      "sigma_race": 3.5,
+      "elasticity": 0.88,
+      "rating_consensus": "Lean R",
+      "rating_p_d_win": 0.313,
       "rating_labels": [
-        "PVI-derived"
+        "Lean R",
+        "Lean R",
+        "Tilt R"
       ],
-      "note": "PVI D+12"
+      "note": "MO redraw flips Cleaver D seat (adopted 9/28/25)"
     },
     {
       "id": "MO-06",
@@ -5490,17 +5498,19 @@
     {
       "id": "TN-09",
       "chamber": "house",
-      "incumbent_party": "D",
+      "incumbent_party": "R",
       "open": false,
-      "expected_margin": 34.2,
-      "sigma_race": 0.7,
-      "elasticity": 0.85,
-      "rating_consensus": "Solid D",
-      "rating_p_d_win": 1,
+      "expected_margin": -2,
+      "sigma_race": 3.5,
+      "elasticity": 0.88,
+      "rating_consensus": "Tilt R",
+      "rating_p_d_win": 0.353,
       "rating_labels": [
-        "PVI-derived"
+        "Lean R",
+        "Lean R",
+        "Toss-up"
       ],
-      "note": "PVI D+23"
+      "note": "TN redraw splits Memphis — flips Cohen D seat (adopted 5/7/26)"
     },
     {
       "id": "TX-01",
@@ -5625,17 +5635,19 @@
     {
       "id": "TX-09",
       "chamber": "house",
-      "incumbent_party": "D",
+      "incumbent_party": "R",
       "open": false,
-      "expected_margin": 35.6,
-      "sigma_race": 0.7,
-      "elasticity": 0.85,
-      "rating_consensus": "Solid D",
-      "rating_p_d_win": 1,
+      "expected_margin": -4.44,
+      "sigma_race": 2.5,
+      "elasticity": 0.88,
+      "rating_consensus": "Likely R",
+      "rating_p_d_win": 0.173,
       "rating_labels": [
-        "PVI-derived"
+        "Likely R",
+        "Likely R",
+        "Lean R"
       ],
-      "note": "PVI D+24"
+      "note": "TX redraw dismantles Green coalition seat — was D"
     },
     {
       "id": "TX-10",
@@ -5976,17 +5988,19 @@
     {
       "id": "TX-32",
       "chamber": "house",
-      "incumbent_party": "D",
+      "incumbent_party": "R",
       "open": false,
-      "expected_margin": 21.6,
-      "sigma_race": 1.2,
-      "elasticity": 0.85,
-      "rating_consensus": "Solid D",
-      "rating_p_d_win": 1,
+      "expected_margin": -4.44,
+      "sigma_race": 2.5,
+      "elasticity": 0.88,
+      "rating_consensus": "Likely R",
+      "rating_p_d_win": 0.173,
       "rating_labels": [
-        "PVI-derived"
+        "Likely R",
+        "Likely R",
+        "Lean R"
       ],
-      "note": "PVI D+14"
+      "note": "TX redraw dismantles Johnson coalition seat — was D"
     },
     {
       "id": "TX-33",
@@ -6100,17 +6114,19 @@
     {
       "id": "UT-02",
       "chamber": "house",
-      "incumbent_party": "R",
+      "incumbent_party": "D",
       "open": false,
-      "expected_margin": -16,
-      "sigma_race": 1.2,
-      "elasticity": 0.85,
-      "rating_consensus": "Solid R",
-      "rating_p_d_win": 0,
+      "expected_margin": 0.6,
+      "sigma_race": 4.5,
+      "elasticity": 0.88,
+      "rating_consensus": "Toss-up",
+      "rating_p_d_win": 0.54,
       "rating_labels": [
-        "PVI-derived"
+        "Toss-up",
+        "Tilt D",
+        "Toss-up"
       ],
-      "note": "PVI R+10"
+      "note": "UT court-ordered redraw flips Maloy R seat (adopted 11/10/25)"
     },
     {
       "id": "UT-03",
