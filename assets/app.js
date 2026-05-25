@@ -30,7 +30,7 @@ const C = {
   mauve:    '#8839ef',
 };
 
-const res = await fetch('assets/results.json').then(r => r.json());
+const res = await fetch('assets/results.json?v=4').then(r => r.json());
 const summary = res.summary;
 const meta = res.meta;
 
@@ -117,26 +117,16 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
     plugins: [{
       id: 'majorityLine',
       afterDraw(chart){
-        // Highly visible vertical line at the threshold.  Double-stroke
-        // (dark halo + bright core) so it reads against both the red bars
-        // on the left and the blue bars on the right.
+        // Single bold black line.  The chip at the top tells you what it is.
         const xScale = chart.scales.x;
         const yScale = chart.scales.y;
         const xPos = xScale.getPixelForValue(threshold);
         const cx = chart.ctx;
         cx.save();
-        // Outer dark halo
-        cx.strokeStyle = '#1a1a1a';
-        cx.lineWidth = 7;
+        cx.strokeStyle = '#000';
+        cx.lineWidth = 5;
         cx.beginPath();
-        cx.moveTo(xPos, yScale.top);
-        cx.lineTo(xPos, yScale.bottom);
-        cx.stroke();
-        // Bright inner stroke
-        cx.strokeStyle = '#ffffff';
-        cx.lineWidth = 3;
-        cx.beginPath();
-        cx.moveTo(xPos, yScale.top);
+        cx.moveTo(xPos, yScale.top - 4);
         cx.lineTo(xPos, yScale.bottom);
         cx.stroke();
         cx.restore();
@@ -158,11 +148,9 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
   const overlay = document.createElement('div');
   overlay.className = 'maj-overlay';
   overlay.dataset.canvasId = canvasId;
-  overlay.innerHTML = `
-    <div class="maj-chip">${threshold} for majority</div>
-    <div class="maj-side maj-r" style="background:${rColor}">◀ R MAJORITY${pDwins!=null?` <b>${pct(1-pDwins)}</b>`:''}</div>
-    <div class="maj-side maj-d" style="background:${dColor}">${pDwins!=null?`<b>${pct(pDwins)}</b> `:''}D MAJORITY ▶</div>
-  `;
+  // Single chip on the black line.  The line and the red/blue bar coloring
+  // make party majority obvious without extra labels.
+  overlay.innerHTML = `<div class="maj-chip">${threshold} for majority</div>`;
   posWrap.appendChild(overlay);
 }
 
@@ -272,11 +260,19 @@ function mixColors(c1, c2, t){
   return `rgb(${r},${g},${bl})`;
 }
 
+// Wrap the cartogram in a scroller so on narrow viewports it can pan
+// horizontally instead of collapsing the tiles to unreadable size.
 const carto = document.getElementById('senate-cartogram');
+const cartoScroller = document.createElement('div');
+cartoScroller.className = 'carto-scroller';
+carto.parentNode.insertBefore(cartoScroller, carto);
+cartoScroller.appendChild(carto);
+
 carto.style.display = 'grid';
 carto.style.gridTemplateColumns = 'repeat(13, 1fr)';
 carto.style.gridTemplateRows = 'repeat(9, 1fr)';
 carto.style.gap = '4px';
+carto.style.width = '100%';
 carto.style.maxWidth = '760px';
 carto.style.margin = '12px auto';
 carto.style.aspectRatio = '13 / 9';
