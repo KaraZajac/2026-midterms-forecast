@@ -30,7 +30,7 @@ const C = {
   mauve:    '#8839ef',
 };
 
-const res = await fetch('assets/results.json?v=5').then(r => r.json());
+const res = await fetch('assets/results.json?v=6').then(r => r.json());
 const summary = res.summary;
 const meta = res.meta;
 
@@ -152,19 +152,22 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
 }
 
 // The plugin tells us the pixel-x of the threshold and the plot top/bottom
-// in canvas-internal coords.  Translate to CSS coords by ratioing against
-// canvas internal vs. client size.
+// in canvas-internal coords.  Express them as percentages of the canvas
+// so the overlay positions are device-pixel-ratio independent and stable
+// across redraws (the chart can resize the canvas backing-store between
+// the first paint and a touch-triggered re-paint, which used to make the
+// line drift when computed in CSS pixels).
 function positionMajorityOverlay(canvasId, xPx, plotLeft, plotRight, plotTop, plotBottom){
   const canvas = document.getElementById(canvasId);
   const overlay = canvas.parentElement.querySelector(`.maj-overlay[data-canvas-id="${canvasId}"]`);
   if (!overlay) return;
-  const dprX = canvas.width / canvas.clientWidth;
-  const dprY = canvas.height / canvas.clientHeight;
-  overlay.style.setProperty('--maj-x', (xPx / dprX) + 'px');
-  overlay.style.setProperty('--plot-left', (plotLeft / dprX) + 'px');
-  overlay.style.setProperty('--plot-right', (plotRight / dprX) + 'px');
-  if (plotTop != null)    overlay.style.setProperty('--plot-top', (plotTop / dprY) + 'px');
-  if (plotBottom != null) overlay.style.setProperty('--plot-bottom', (plotBottom / dprY) + 'px');
+  const cw = canvas.width, ch = canvas.height;
+  if (!cw || !ch) return;
+  overlay.style.setProperty('--maj-x',      (xPx       / cw * 100) + '%');
+  overlay.style.setProperty('--plot-left',  (plotLeft  / cw * 100) + '%');
+  overlay.style.setProperty('--plot-right', (plotRight / cw * 100) + '%');
+  if (plotTop != null)    overlay.style.setProperty('--plot-top',    (plotTop    / ch * 100) + '%');
+  if (plotBottom != null) overlay.style.setProperty('--plot-bottom', (plotBottom / ch * 100) + '%');
 }
 
 // House distribution — center on 218

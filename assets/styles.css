@@ -272,17 +272,18 @@ pre{
    chip down to the x-axis tick area (via --plot-bottom from the plugin). */
 .maj-overlay .maj-line{
   position:absolute;
-  left:calc(var(--maj-x, 50%) - 2px);
+  left:var(--maj-x, 50%);
   top:32px;
-  bottom:calc(100% - var(--plot-bottom, 100%) - 0px);
+  height:calc(var(--plot-bottom, 90%) - 32px);
   width:4px;
+  margin-left:-2px;       /* center the 4px line on --maj-x */
   background:#000;
   border-radius:1px;
   box-shadow:0 0 0 1px rgba(255,255,255,.5);
 }
 .maj-overlay .maj-chip{
   position:absolute;
-  left:calc(var(--maj-x, 50%));
+  left:var(--maj-x, 50%);
   top:6px;
   transform:translateX(-50%);
   background:var(--ctp-text);color:#fff;
