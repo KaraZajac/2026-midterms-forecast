@@ -286,6 +286,24 @@ pre{
   color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;
   padding:4px 9px;border-radius:3px;white-space:nowrap;
   box-shadow:0 1px 3px rgba(76,79,105,.15);
+  max-width:46%;overflow:hidden;text-overflow:ellipsis;
+}
+.maj-overlay .maj-r{text-align:right}
+.maj-overlay .maj-d{text-align:left}
+
+/* On mobile, anchor the R/D labels to chart edges instead of stacking
+   against the line, so they don't get clipped by narrow viewports. */
+@media (max-width: 600px){
+  .maj-overlay .maj-chip{font-size:10px;padding:4px 7px}
+  .maj-overlay .maj-side{
+    font-size:10px;padding:3px 6px;letter-spacing:.04em;top:38px;
+  }
+  .maj-overlay .maj-r{
+    right:auto;left:8px;
+  }
+  .maj-overlay .maj-d{
+    left:auto;right:8px;
+  }
 }
 .maj-overlay .maj-r{
   right:calc(100% - var(--maj-x, 50%) + 14px);

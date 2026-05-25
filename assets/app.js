@@ -117,20 +117,29 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
     plugins: [{
       id: 'majorityLine',
       afterDraw(chart){
-        // Solid, prominent vertical line at the threshold
+        // Highly visible vertical line at the threshold.  Double-stroke
+        // (dark halo + bright core) so it reads against both the red bars
+        // on the left and the blue bars on the right.
         const xScale = chart.scales.x;
         const yScale = chart.scales.y;
         const xPos = xScale.getPixelForValue(threshold);
         const cx = chart.ctx;
         cx.save();
-        cx.strokeStyle = C.ink;
+        // Outer dark halo
+        cx.strokeStyle = '#1a1a1a';
+        cx.lineWidth = 7;
+        cx.beginPath();
+        cx.moveTo(xPos, yScale.top);
+        cx.lineTo(xPos, yScale.bottom);
+        cx.stroke();
+        // Bright inner stroke
+        cx.strokeStyle = '#ffffff';
         cx.lineWidth = 3;
         cx.beginPath();
         cx.moveTo(xPos, yScale.top);
         cx.lineTo(xPos, yScale.bottom);
         cx.stroke();
         cx.restore();
-        // Position the HTML overlay labels using the line's pixel x
         positionMajorityOverlay(canvasId, xPos, xScale.left, xScale.right);
       }
     }]
@@ -178,9 +187,11 @@ distChart('chart-house', houseDist, 218, C.d, C.r, 170, 260, summary.house.p_d_w
 document.getElementById('dist-h-median').textContent = summary.house.d_seats_median;
 document.getElementById('dist-h-mean').textContent = summary.house.d_seats_mean.toFixed(1);
 
-// Senate distribution — center on 51
+// Senate distribution — center on 51.  Use a wider x-range so the 51-chip
+// has room on mobile (the threshold sits in the right half of 42-58 and the
+// chip was clipping at narrow viewports).
 const senateDist = res.distributions.senate_d_seats;
-distChart('chart-senate', senateDist, 51, C.d, C.r, 42, 58, summary.senate.p_d_wins);
+distChart('chart-senate', senateDist, 51, C.d, C.r, 40, 60, summary.senate.p_d_wins);
 document.getElementById('dist-s-median').textContent = summary.senate.d_seats_median;
 document.getElementById('dist-s-mean').textContent = summary.senate.d_seats_mean.toFixed(1);
 
