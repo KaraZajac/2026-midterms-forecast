@@ -30,7 +30,7 @@ const C = {
   mauve:    '#8839ef',
 };
 
-const res = await fetch('assets/results.json?v=6').then(r => r.json());
+const res = await fetch('assets/results.json?v=8').then(r => r.json());
 const summary = res.summary;
 const meta = res.meta;
 
@@ -117,13 +117,31 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
     plugins: [{
       id: 'majorityLine',
       afterDraw(chart){
-        // No canvas drawing — the line is an HTML element in the overlay,
-        // positioned via the CSS variables we update below.  This is more
-        // reliable across DPR / mobile rendering than a canvas stroke.
-        const xScale = chart.scales.x;
-        const yScale = chart.scales.y;
-        const xPos = xScale.getPixelForValue(threshold);
-        positionMajorityOverlay(canvasId, xPos, xScale.left, xScale.right, yScale.top, yScale.bottom);
+        // Position the line entirely from chart.chartArea (CSS-px plot
+        // bounds) and the known threshold value.  Avoiding xScale here
+        // because its coordinate space appears to switch between CSS px
+        // and backing-store px between Chart.js's first draw and a
+        // touch-triggered redraw on mobile, which caused the line to
+        // drift right after touch.
+        const ca = chart.chartArea;
+        if (!ca || ca.right <= ca.left) return;
+        const rect = chart.canvas.getBoundingClientRect();
+        if (!rect.width) return;
+        // Where the threshold value sits in the configured value range.
+        const fracInRange = (threshold - xMin) / (xMax - xMin);
+        // Plot-area edges as fractions of canvas CSS width.
+        const plotLeftFrac  = ca.left  / rect.width;
+        const plotRightFrac = ca.right / rect.width;
+        // Final line position as a fraction of canvas CSS width.
+        const xFrac = plotLeftFrac + fracInRange * (plotRightFrac - plotLeftFrac);
+
+        const overlay = chart.canvas.parentElement.querySelector(`.maj-overlay[data-canvas-id="${canvasId}"]`);
+        if (!overlay) return;
+        overlay.style.setProperty('--maj-x',       (xFrac * 100) + '%');
+        overlay.style.setProperty('--plot-left',   (plotLeftFrac  * 100) + '%');
+        overlay.style.setProperty('--plot-right',  (plotRightFrac * 100) + '%');
+        overlay.style.setProperty('--plot-top',    (ca.top    / rect.height * 100) + '%');
+        overlay.style.setProperty('--plot-bottom', (ca.bottom / rect.height * 100) + '%');
       }
     }]
   });
@@ -151,24 +169,10 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
   posWrap.appendChild(overlay);
 }
 
-// The plugin tells us the pixel-x of the threshold and the plot top/bottom
-// in canvas-internal coords.  Express them as percentages of the canvas
-// so the overlay positions are device-pixel-ratio independent and stable
-// across redraws (the chart can resize the canvas backing-store between
-// the first paint and a touch-triggered re-paint, which used to make the
-// line drift when computed in CSS pixels).
-function positionMajorityOverlay(canvasId, xPx, plotLeft, plotRight, plotTop, plotBottom){
-  const canvas = document.getElementById(canvasId);
-  const overlay = canvas.parentElement.querySelector(`.maj-overlay[data-canvas-id="${canvasId}"]`);
-  if (!overlay) return;
-  const cw = canvas.width, ch = canvas.height;
-  if (!cw || !ch) return;
-  overlay.style.setProperty('--maj-x',      (xPx       / cw * 100) + '%');
-  overlay.style.setProperty('--plot-left',  (plotLeft  / cw * 100) + '%');
-  overlay.style.setProperty('--plot-right', (plotRight / cw * 100) + '%');
-  if (plotTop != null)    overlay.style.setProperty('--plot-top',    (plotTop    / ch * 100) + '%');
-  if (plotBottom != null) overlay.style.setProperty('--plot-bottom', (plotBottom / ch * 100) + '%');
-}
+// (positionMajorityOverlay removed — logic now lives inline in the plugin's
+// afterDraw, using chart.chartArea + chart.canvas.getBoundingClientRect
+// which are both in CSS pixels and so don't depend on canvas backing-store
+// resize timing.)
 
 // House distribution — center on 218
 const houseDist = res.distributions.house_d_seats;
