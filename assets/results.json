@@ -1,0 +1,5747 @@
+{
+  "meta": {
+    "as_of": "2026-05-25",
+    "election_date": "2026-11-03",
+    "days_until": 162,
+    "trump_approval_pct": 38,
+    "generic_ballot_d_pct": 6.6,
+    "nat_swing_mean_pp": 0,
+    "nat_swing_sigma_pp": 4,
+    "house_senate_correlation": 0.65,
+    "current_house": {
+      "D": 215,
+      "R": 220
+    },
+    "current_senate": {
+      "D_caucus": 47,
+      "R": 53
+    },
+    "control_threshold": {
+      "house": 218,
+      "senate": 51
+    },
+    "notes": [
+      "Trump approval ~38% (May 2026); historical regression at this approval gives House Δ ≈ -28 R, SD 15.",
+      "Generic ballot D+6.6; comparable to May 2018 (which produced D+40 in November).",
+      "Mid-decade redistricting partially offsets D environment: net +5-7 R structural seats (TX/FL/OH/NC/MO/TN vs CA/UT).",
+      "Ratings as of May 8-21, 2026 (Cook 5/13, Sabato 5/8, Inside Elections 5/21)."
+    ],
+    "n_trials": 20000,
+    "generated_at": "2026-05-25T18:43:53.020Z"
+  },
+  "summary": {
+    "house": {
+      "p_d_wins": 0.4618,
+      "p_r_wins": 0.5382,
+      "d_seats_mean": 215.1167,
+      "d_seats_median": 216,
+      "d_seats_p10": 192,
+      "d_seats_p90": 237,
+      "d_seats_p05": 184,
+      "d_seats_p95": 243
+    },
+    "senate": {
+      "p_d_wins": 0.4587,
+      "p_r_wins": 0.5413,
+      "d_seats_mean": 49.99515,
+      "d_seats_median": 50,
+      "d_seats_p10": 47,
+      "d_seats_p90": 53,
+      "d_seats_p05": 45,
+      "d_seats_p95": 54
+    },
+    "joint": {
+      "p_d_trifecta": 0.3071,
+      "p_d_house_only": 0.1547,
+      "p_d_senate_only": 0.1516,
+      "p_r_trifecta": 0.3866
+    },
+    "national_swing": {
+      "mean": 0.026761422157145966,
+      "p10": -5.061256245112308,
+      "p50": 0.039783076099991495,
+      "p90": 5.190460796007002
+    }
+  },
+  "distributions": {
+    "house_d_seats": [
+      {
+        "x": 146,
+        "y": 0.00005
+      },
+      {
+        "x": 147,
+        "y": 0.00005
+      },
+      {
+        "x": 148,
+        "y": 0.00005
+      },
+      {
+        "x": 149,
+        "y": 0.0001
+      },
+      {
+        "x": 150,
+        "y": 0.0002
+      },
+      {
+        "x": 151,
+        "y": 0.0002
+      },
+      {
+        "x": 152,
+        "y": 0.0003
+      },
+      {
+        "x": 153,
+        "y": 0.0002
+      },
+      {
+        "x": 154,
+        "y": 0.00015
+      },
+      {
+        "x": 155,
+        "y": 0.00035
+      },
+      {
+        "x": 156,
+        "y": 0.0001
+      },
+      {
+        "x": 157,
+        "y": 0.00045
+      },
+      {
+        "x": 158,
+        "y": 0.0004
+      },
+      {
+        "x": 159,
+        "y": 0.00035
+      },
+      {
+        "x": 160,
+        "y": 0.0003
+      },
+      {
+        "x": 161,
+        "y": 0.00065
+      },
+      {
+        "x": 162,
+        "y": 0.0007
+      },
+      {
+        "x": 163,
+        "y": 0.0005
+      },
+      {
+        "x": 164,
+        "y": 0.00095
+      },
+      {
+        "x": 165,
+        "y": 0.00065
+      },
+      {
+        "x": 166,
+        "y": 0.0009
+      },
+      {
+        "x": 167,
+        "y": 0.0012
+      },
+      {
+        "x": 168,
+        "y": 0.00115
+      },
+      {
+        "x": 169,
+        "y": 0.00125
+      },
+      {
+        "x": 170,
+        "y": 0.00165
+      },
+      {
+        "x": 171,
+        "y": 0.0013
+      },
+      {
+        "x": 172,
+        "y": 0.00185
+      },
+      {
+        "x": 173,
+        "y": 0.0022
+      },
+      {
+        "x": 174,
+        "y": 0.00165
+      },
+      {
+        "x": 175,
+        "y": 0.0028
+      },
+      {
+        "x": 176,
+        "y": 0.0016
+      },
+      {
+        "x": 177,
+        "y": 0.00195
+      },
+      {
+        "x": 178,
+        "y": 0.0026
+      },
+      {
+        "x": 179,
+        "y": 0.00375
+      },
+      {
+        "x": 180,
+        "y": 0.00345
+      },
+      {
+        "x": 181,
+        "y": 0.0037
+      },
+      {
+        "x": 182,
+        "y": 0.00365
+      },
+      {
+        "x": 183,
+        "y": 0.00455
+      },
+      {
+        "x": 184,
+        "y": 0.00465
+      },
+      {
+        "x": 185,
+        "y": 0.00485
+      },
+      {
+        "x": 186,
+        "y": 0.00535
+      },
+      {
+        "x": 187,
+        "y": 0.0049
+      },
+      {
+        "x": 188,
+        "y": 0.00575
+      },
+      {
+        "x": 189,
+        "y": 0.00615
+      },
+      {
+        "x": 190,
+        "y": 0.007
+      },
+      {
+        "x": 191,
+        "y": 0.0066
+      },
+      {
+        "x": 192,
+        "y": 0.0073
+      },
+      {
+        "x": 193,
+        "y": 0.008
+      },
+      {
+        "x": 194,
+        "y": 0.0095
+      },
+      {
+        "x": 195,
+        "y": 0.0117
+      },
+      {
+        "x": 196,
+        "y": 0.0105
+      },
+      {
+        "x": 197,
+        "y": 0.01255
+      },
+      {
+        "x": 198,
+        "y": 0.0115
+      },
+      {
+        "x": 199,
+        "y": 0.01265
+      },
+      {
+        "x": 200,
+        "y": 0.01405
+      },
+      {
+        "x": 201,
+        "y": 0.01385
+      },
+      {
+        "x": 202,
+        "y": 0.0168
+      },
+      {
+        "x": 203,
+        "y": 0.01425
+      },
+      {
+        "x": 204,
+        "y": 0.0164
+      },
+      {
+        "x": 205,
+        "y": 0.0174
+      },
+      {
+        "x": 206,
+        "y": 0.01715
+      },
+      {
+        "x": 207,
+        "y": 0.0203
+      },
+      {
+        "x": 208,
+        "y": 0.0208
+      },
+      {
+        "x": 209,
+        "y": 0.0204
+      },
+      {
+        "x": 210,
+        "y": 0.02205
+      },
+      {
+        "x": 211,
+        "y": 0.02355
+      },
+      {
+        "x": 212,
+        "y": 0.02245
+      },
+      {
+        "x": 213,
+        "y": 0.02285
+      },
+      {
+        "x": 214,
+        "y": 0.02395
+      },
+      {
+        "x": 215,
+        "y": 0.0245
+      },
+      {
+        "x": 216,
+        "y": 0.02515
+      },
+      {
+        "x": 217,
+        "y": 0.02545
+      },
+      {
+        "x": 218,
+        "y": 0.02615
+      },
+      {
+        "x": 219,
+        "y": 0.025
+      },
+      {
+        "x": 220,
+        "y": 0.0247
+      },
+      {
+        "x": 221,
+        "y": 0.02385
+      },
+      {
+        "x": 222,
+        "y": 0.02365
+      },
+      {
+        "x": 223,
+        "y": 0.0228
+      },
+      {
+        "x": 224,
+        "y": 0.0207
+      },
+      {
+        "x": 225,
+        "y": 0.0203
+      },
+      {
+        "x": 226,
+        "y": 0.01895
+      },
+      {
+        "x": 227,
+        "y": 0.01905
+      },
+      {
+        "x": 228,
+        "y": 0.0173
+      },
+      {
+        "x": 229,
+        "y": 0.0153
+      },
+      {
+        "x": 230,
+        "y": 0.01685
+      },
+      {
+        "x": 231,
+        "y": 0.01305
+      },
+      {
+        "x": 232,
+        "y": 0.01435
+      },
+      {
+        "x": 233,
+        "y": 0.01375
+      },
+      {
+        "x": 234,
+        "y": 0.01415
+      },
+      {
+        "x": 235,
+        "y": 0.01165
+      },
+      {
+        "x": 236,
+        "y": 0.01015
+      },
+      {
+        "x": 237,
+        "y": 0.01045
+      },
+      {
+        "x": 238,
+        "y": 0.01035
+      },
+      {
+        "x": 239,
+        "y": 0.01055
+      },
+      {
+        "x": 240,
+        "y": 0.0087
+      },
+      {
+        "x": 241,
+        "y": 0.00735
+      },
+      {
+        "x": 242,
+        "y": 0.00715
+      },
+      {
+        "x": 243,
+        "y": 0.00765
+      },
+      {
+        "x": 244,
+        "y": 0.00735
+      },
+      {
+        "x": 245,
+        "y": 0.00675
+      },
+      {
+        "x": 246,
+        "y": 0.00495
+      },
+      {
+        "x": 247,
+        "y": 0.0048
+      },
+      {
+        "x": 248,
+        "y": 0.00355
+      },
+      {
+        "x": 249,
+        "y": 0.00345
+      },
+      {
+        "x": 250,
+        "y": 0.00275
+      },
+      {
+        "x": 251,
+        "y": 0.00265
+      },
+      {
+        "x": 252,
+        "y": 0.0024
+      },
+      {
+        "x": 253,
+        "y": 0.00175
+      },
+      {
+        "x": 254,
+        "y": 0.0013
+      },
+      {
+        "x": 255,
+        "y": 0.0009
+      },
+      {
+        "x": 256,
+        "y": 0.0008
+      },
+      {
+        "x": 257,
+        "y": 0.0007
+      },
+      {
+        "x": 258,
+        "y": 0.00065
+      },
+      {
+        "x": 259,
+        "y": 0.00055
+      },
+      {
+        "x": 260,
+        "y": 0.00035
+      },
+      {
+        "x": 261,
+        "y": 0.0005
+      },
+      {
+        "x": 262,
+        "y": 0.0002
+      },
+      {
+        "x": 263,
+        "y": 0.00025
+      },
+      {
+        "x": 264,
+        "y": 0.00025
+      },
+      {
+        "x": 265,
+        "y": 0.0002
+      },
+      {
+        "x": 266,
+        "y": 0.0003
+      },
+      {
+        "x": 267,
+        "y": 0.0001
+      },
+      {
+        "x": 268,
+        "y": 0.00005
+      },
+      {
+        "x": 269,
+        "y": 0.00005
+      },
+      {
+        "x": 271,
+        "y": 0.00015
+      },
+      {
+        "x": 272,
+        "y": 0.00005
+      },
+      {
+        "x": 273,
+        "y": 0.00005
+      },
+      {
+        "x": 277,
+        "y": 0.00005
+      },
+      {
+        "x": 278,
+        "y": 0.00005
+      }
+    ],
+    "senate_d_seats": [
+      {
+        "x": 39,
+        "y": 0.00005
+      },
+      {
+        "x": 40,
+        "y": 0.00015
+      },
+      {
+        "x": 41,
+        "y": 0.0023
+      },
+      {
+        "x": 42,
+        "y": 0.0042
+      },
+      {
+        "x": 43,
+        "y": 0.0074
+      },
+      {
+        "x": 44,
+        "y": 0.01375
+      },
+      {
+        "x": 45,
+        "y": 0.02615
+      },
+      {
+        "x": 46,
+        "y": 0.04505
+      },
+      {
+        "x": 47,
+        "y": 0.0681
+      },
+      {
+        "x": 48,
+        "y": 0.09995
+      },
+      {
+        "x": 49,
+        "y": 0.1266
+      },
+      {
+        "x": 50,
+        "y": 0.1476
+      },
+      {
+        "x": 51,
+        "y": 0.1561
+      },
+      {
+        "x": 52,
+        "y": 0.1384
+      },
+      {
+        "x": 53,
+        "y": 0.09495
+      },
+      {
+        "x": 54,
+        "y": 0.04505
+      },
+      {
+        "x": 55,
+        "y": 0.0174
+      },
+      {
+        "x": 56,
+        "y": 0.0056
+      },
+      {
+        "x": 57,
+        "y": 0.00075
+      },
+      {
+        "x": 58,
+        "y": 0.0003
+      },
+      {
+        "x": 59,
+        "y": 0.00015
+      }
+    ],
+    "national_swing": [
+      {
+        "x": -14,
+        "y": 0.00025
+      },
+      {
+        "x": -13.5,
+        "y": 0.0001
+      },
+      {
+        "x": -13,
+        "y": 0.00025
+      },
+      {
+        "x": -12.5,
+        "y": 0.0005
+      },
+      {
+        "x": -12,
+        "y": 0.0007
+      },
+      {
+        "x": -11.5,
+        "y": 0.0004
+      },
+      {
+        "x": -11,
+        "y": 0.0013
+      },
+      {
+        "x": -10.5,
+        "y": 0.0018
+      },
+      {
+        "x": -10,
+        "y": 0.00175
+      },
+      {
+        "x": -9.5,
+        "y": 0.00315
+      },
+      {
+        "x": -9,
+        "y": 0.0043
+      },
+      {
+        "x": -8.5,
+        "y": 0.00525
+      },
+      {
+        "x": -8,
+        "y": 0.00565
+      },
+      {
+        "x": -7.5,
+        "y": 0.00945
+      },
+      {
+        "x": -7,
+        "y": 0.01025
+      },
+      {
+        "x": -6.5,
+        "y": 0.01325
+      },
+      {
+        "x": -6,
+        "y": 0.01515
+      },
+      {
+        "x": -5.5,
+        "y": 0.0192
+      },
+      {
+        "x": -5,
+        "y": 0.02345
+      },
+      {
+        "x": -4.5,
+        "y": 0.0286
+      },
+      {
+        "x": -4,
+        "y": 0.02915
+      },
+      {
+        "x": -3.5,
+        "y": 0.03335
+      },
+      {
+        "x": -3,
+        "y": 0.03955
+      },
+      {
+        "x": -2.5,
+        "y": 0.0413
+      },
+      {
+        "x": -2,
+        "y": 0.0424
+      },
+      {
+        "x": -1.5,
+        "y": 0.04625
+      },
+      {
+        "x": -1,
+        "y": 0.0454
+      },
+      {
+        "x": -0.5,
+        "y": 0.0495
+      },
+      {
+        "x": 0,
+        "y": 0.04915
+      },
+      {
+        "x": 0.5,
+        "y": 0.0515
+      },
+      {
+        "x": 1,
+        "y": 0.0515
+      },
+      {
+        "x": 1.5,
+        "y": 0.0459
+      },
+      {
+        "x": 2,
+        "y": 0.04145
+      },
+      {
+        "x": 2.5,
+        "y": 0.04105
+      },
+      {
+        "x": 3,
+        "y": 0.0377
+      },
+      {
+        "x": 3.5,
+        "y": 0.03285
+      },
+      {
+        "x": 4,
+        "y": 0.02915
+      },
+      {
+        "x": 4.5,
+        "y": 0.02665
+      },
+      {
+        "x": 5,
+        "y": 0.0241
+      },
+      {
+        "x": 5.5,
+        "y": 0.01855
+      },
+      {
+        "x": 6,
+        "y": 0.0166
+      },
+      {
+        "x": 6.5,
+        "y": 0.01315
+      },
+      {
+        "x": 7,
+        "y": 0.01205
+      },
+      {
+        "x": 7.5,
+        "y": 0.01045
+      },
+      {
+        "x": 8,
+        "y": 0.00645
+      },
+      {
+        "x": 8.5,
+        "y": 0.00515
+      },
+      {
+        "x": 9,
+        "y": 0.0038
+      },
+      {
+        "x": 9.5,
+        "y": 0.0032
+      },
+      {
+        "x": 10,
+        "y": 0.00225
+      },
+      {
+        "x": 10.5,
+        "y": 0.00175
+      },
+      {
+        "x": 11,
+        "y": 0.00125
+      },
+      {
+        "x": 11.5,
+        "y": 0.00105
+      },
+      {
+        "x": 12,
+        "y": 0.0007
+      },
+      {
+        "x": 12.5,
+        "y": 0.0004
+      },
+      {
+        "x": 13,
+        "y": 0.0003
+      },
+      {
+        "x": 13.5,
+        "y": 0.00005
+      },
+      {
+        "x": 14,
+        "y": 0.00005
+      },
+      {
+        "x": 14.5,
+        "y": 0.00005
+      },
+      {
+        "x": 15,
+        "y": 0.00005
+      },
+      {
+        "x": 15.5,
+        "y": 0.00005
+      }
+    ]
+  },
+  "races": {
+    "house": [
+      {
+        "id": "AK-AL",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.12,
+        "expected_margin": -5.54,
+        "model_p_d_win": 0.0997,
+        "note": "RCV at-large"
+      },
+      {
+        "id": "AL-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -41.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+28"
+      },
+      {
+        "id": "AL-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.98,
+        "expected_margin": 9,
+        "model_p_d_win": 0.9909,
+        "note": "PVI D+5"
+      },
+      {
+        "id": "AL-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -34.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+23"
+      },
+      {
+        "id": "AL-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -49.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+34"
+      },
+      {
+        "id": "AL-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -23,
+        "model_p_d_win": 0,
+        "note": "PVI R+15"
+      },
+      {
+        "id": "AL-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -30,
+        "model_p_d_win": 0,
+        "note": "PVI R+20"
+      },
+      {
+        "id": "AL-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 18.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+12"
+      },
+      {
+        "id": "AR-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -34.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+23"
+      },
+      {
+        "id": "AR-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.001,
+        "expected_margin": -13.2,
+        "model_p_d_win": 0.00035,
+        "note": "PVI R+8"
+      },
+      {
+        "id": "AR-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -20.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+13"
+      },
+      {
+        "id": "AR-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -30,
+        "model_p_d_win": 0,
+        "note": "PVI R+20"
+      },
+      {
+        "id": "AZ-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0,
+        "model_p_d_win": 0.5008,
+        "note": "Schweikert running for gov"
+      },
+      {
+        "id": "AZ-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.12,
+        "expected_margin": -5.54,
+        "model_p_d_win": 0.1032,
+        "note": ""
+      },
+      {
+        "id": "AZ-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 32.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+22"
+      },
+      {
+        "id": "AZ-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.966,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "AZ-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "AZ-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0,
+        "model_p_d_win": 0.5038,
+        "note": ""
+      },
+      {
+        "id": "AZ-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 20.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+13"
+      },
+      {
+        "id": "AZ-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.001,
+        "expected_margin": -13.2,
+        "model_p_d_win": 0.00035,
+        "note": "PVI R+8"
+      },
+      {
+        "id": "AZ-09",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -23,
+        "model_p_d_win": 0,
+        "note": "PVI R+15"
+      },
+      {
+        "id": "CA-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.99,
+        "expected_margin": 9.72,
+        "model_p_d_win": 0.9895,
+        "note": "CA Prop 50 redraw flip"
+      },
+      {
+        "id": "CA-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 35.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+24"
+      },
+      {
+        "id": "CA-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.154,
+        "expected_margin": -4.8,
+        "model_p_d_win": 0.13145,
+        "note": "PVI R+2"
+      },
+      {
+        "id": "CA-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 25.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+17"
+      },
+      {
+        "id": "CA-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.001,
+        "expected_margin": -13.2,
+        "model_p_d_win": 0.00015,
+        "note": "PVI R+8"
+      },
+      {
+        "id": "CA-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.917,
+        "expected_margin": 5.78,
+        "model_p_d_win": 0.9406,
+        "note": "Prop 50 redraw flip from Kiley R"
+      },
+      {
+        "id": "CA-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 25.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+17"
+      },
+      {
+        "id": "CA-08",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 35.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+24"
+      },
+      {
+        "id": "CA-09",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.846,
+        "expected_margin": 4.8,
+        "model_p_d_win": 0.8743,
+        "note": "PVI D+2"
+      },
+      {
+        "id": "CA-10",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 27.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+18"
+      },
+      {
+        "id": "CA-11",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 52.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+36"
+      },
+      {
+        "id": "CA-12",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 56.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+39"
+      },
+      {
+        "id": "CA-13",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.687,
+        "expected_margin": 2.59,
+        "model_p_d_win": 0.7025,
+        "note": ""
+      },
+      {
+        "id": "CA-14",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 30,
+        "model_p_d_win": 1,
+        "note": "PVI D+20"
+      },
+      {
+        "id": "CA-15",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 39.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+27"
+      },
+      {
+        "id": "CA-16",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 37,
+        "model_p_d_win": 1,
+        "note": "PVI D+25"
+      },
+      {
+        "id": "CA-17",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 31.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+21"
+      },
+      {
+        "id": "CA-18",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 27.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+18"
+      },
+      {
+        "id": "CA-19",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 27.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+18"
+      },
+      {
+        "id": "CA-20",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -23,
+        "model_p_d_win": 0,
+        "note": "PVI R+15"
+      },
+      {
+        "id": "CA-21",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.98,
+        "expected_margin": 9,
+        "model_p_d_win": 0.99155,
+        "note": "PVI D+5"
+      },
+      {
+        "id": "CA-22",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.46,
+        "expected_margin": -0.6,
+        "model_p_d_win": 0.4641,
+        "note": "Incumbent-on-incumbent (Valadao R vs new D)"
+      },
+      {
+        "id": "CA-23",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.001,
+        "expected_margin": -13.2,
+        "model_p_d_win": 0.00035,
+        "note": "PVI R+8"
+      },
+      {
+        "id": "CA-24",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 20.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+13"
+      },
+      {
+        "id": "CA-25",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.9628,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "CA-26",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.9999,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "CA-27",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.92985,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "CA-28",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 23,
+        "model_p_d_win": 1,
+        "note": "PVI D+15"
+      },
+      {
+        "id": "CA-29",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 32.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+22"
+      },
+      {
+        "id": "CA-30",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 32.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+22"
+      },
+      {
+        "id": "CA-31",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 18.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+12"
+      },
+      {
+        "id": "CA-32",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 25.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+17"
+      },
+      {
+        "id": "CA-33",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.99985,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "CA-34",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 42.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+29"
+      },
+      {
+        "id": "CA-35",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 14.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+9"
+      },
+      {
+        "id": "CA-36",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 31.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+21"
+      },
+      {
+        "id": "CA-37",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 49.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+34"
+      },
+      {
+        "id": "CA-38",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 17.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+11"
+      },
+      {
+        "id": "CA-39",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.99965,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "CA-40",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.236,
+        "expected_margin": -3.4,
+        "model_p_d_win": 0.21425,
+        "note": "PVI R+1"
+      },
+      {
+        "id": "CA-41",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.094,
+        "expected_margin": -6.2,
+        "model_p_d_win": 0.071,
+        "note": "PVI R+3"
+      },
+      {
+        "id": "CA-42",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 28.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+19"
+      },
+      {
+        "id": "CA-43",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 41.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+28"
+      },
+      {
+        "id": "CA-44",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 30,
+        "model_p_d_win": 1,
+        "note": "PVI D+20"
+      },
+      {
+        "id": "CA-45",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.764,
+        "expected_margin": 3.4,
+        "model_p_d_win": 0.7869,
+        "note": "PVI D+1"
+      },
+      {
+        "id": "CA-46",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 17.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+11"
+      },
+      {
+        "id": "CA-47",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.92675,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "CA-48",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.687,
+        "expected_margin": 2.59,
+        "model_p_d_win": 0.687,
+        "note": "Issa retiring, Prop 50 redraw"
+      },
+      {
+        "id": "CA-49",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.9638,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "CA-50",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 23,
+        "model_p_d_win": 1,
+        "note": "PVI D+15"
+      },
+      {
+        "id": "CA-51",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 18.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+12"
+      },
+      {
+        "id": "CA-52",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 21.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+14"
+      },
+      {
+        "id": "CO-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 42.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+29"
+      },
+      {
+        "id": "CO-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 30,
+        "model_p_d_win": 1,
+        "note": "PVI D+20"
+      },
+      {
+        "id": "CO-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.02,
+        "expected_margin": -9,
+        "model_p_d_win": 0.01035,
+        "note": "PVI R+5"
+      },
+      {
+        "id": "CO-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "CO-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.009,
+        "expected_margin": -10.4,
+        "model_p_d_win": 0.003,
+        "note": "PVI R+6"
+      },
+      {
+        "id": "CO-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 16,
+        "model_p_d_win": 1,
+        "note": "PVI D+10"
+      },
+      {
+        "id": "CO-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.996,
+        "expected_margin": 11.8,
+        "model_p_d_win": 0.99905,
+        "note": "PVI D+7"
+      },
+      {
+        "id": "CO-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0,
+        "model_p_d_win": 0.4985,
+        "note": ""
+      },
+      {
+        "id": "CT-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 18.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+12"
+      },
+      {
+        "id": "CT-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.9636,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "CT-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.9998,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "CT-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 20.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+13"
+      },
+      {
+        "id": "CT-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.9633,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "DE-AL",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.99985,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "FL-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -27.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+18"
+      },
+      {
+        "id": "FL-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.001,
+        "expected_margin": -13.2,
+        "model_p_d_win": 0.0004,
+        "note": "PVI R+8"
+      },
+      {
+        "id": "FL-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "FL-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.02,
+        "expected_margin": -9,
+        "model_p_d_win": 0.0101,
+        "note": "PVI R+5"
+      },
+      {
+        "id": "FL-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "FL-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "FL-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.02,
+        "expected_margin": -9,
+        "model_p_d_win": 0.01055,
+        "note": "PVI R+5"
+      },
+      {
+        "id": "FL-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "FL-09",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.12,
+        "expected_margin": -5.54,
+        "model_p_d_win": 0.1033,
+        "note": "FL redraw flips Soto seat"
+      },
+      {
+        "id": "FL-10",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 20.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+13"
+      },
+      {
+        "id": "FL-11",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.001,
+        "expected_margin": -13.2,
+        "model_p_d_win": 0.00025,
+        "note": "PVI R+8"
+      },
+      {
+        "id": "FL-12",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -25.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+17"
+      },
+      {
+        "id": "FL-13",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.02,
+        "expected_margin": -9,
+        "model_p_d_win": 0.0109,
+        "note": "PVI R+5"
+      },
+      {
+        "id": "FL-14",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Tilt R",
+        "rating_p_d_win": 0.353,
+        "expected_margin": -2,
+        "model_p_d_win": 0.3449,
+        "note": "FL redraw flips Castor seat"
+      },
+      {
+        "id": "FL-15",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.054,
+        "expected_margin": -7.6,
+        "model_p_d_win": 0.03685,
+        "note": "PVI R+4"
+      },
+      {
+        "id": "FL-16",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.17,
+        "expected_margin": -4.5,
+        "model_p_d_win": 0.1721,
+        "note": ""
+      },
+      {
+        "id": "FL-17",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "FL-18",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "FL-19",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -20.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+13"
+      },
+      {
+        "id": "FL-20",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 32.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+22"
+      },
+      {
+        "id": "FL-21",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.004,
+        "expected_margin": -11.8,
+        "model_p_d_win": 0.0015,
+        "note": "PVI R+7"
+      },
+      {
+        "id": "FL-22",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.313,
+        "expected_margin": -2.59,
+        "model_p_d_win": 0.31505,
+        "note": "New seat from FL redraw"
+      },
+      {
+        "id": "FL-23",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.9293,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "FL-24",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 28.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+19"
+      },
+      {
+        "id": "FL-25",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.54,
+        "expected_margin": 0.6,
+        "model_p_d_win": 0.5387,
+        "note": "New seat from FL redraw"
+      },
+      {
+        "id": "FL-26",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "FL-27",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.02,
+        "expected_margin": -9,
+        "model_p_d_win": 0.01025,
+        "note": "PVI R+5"
+      },
+      {
+        "id": "FL-28",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "GA-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.001,
+        "expected_margin": -13.2,
+        "model_p_d_win": 0.00035,
+        "note": "PVI R+8"
+      },
+      {
+        "id": "GA-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.9655,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "GA-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -24.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+16"
+      },
+      {
+        "id": "GA-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 39.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+27"
+      },
+      {
+        "id": "GA-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 52.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+36"
+      },
+      {
+        "id": "GA-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 35.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+24"
+      },
+      {
+        "id": "GA-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "GA-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -23,
+        "model_p_d_win": 0,
+        "note": "PVI R+15"
+      },
+      {
+        "id": "GA-09",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -25.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+17"
+      },
+      {
+        "id": "GA-10",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "GA-11",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "GA-12",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.004,
+        "expected_margin": -11.8,
+        "model_p_d_win": 0.00095,
+        "note": "PVI R+7"
+      },
+      {
+        "id": "GA-13",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 30,
+        "model_p_d_win": 1,
+        "note": "PVI D+20"
+      },
+      {
+        "id": "GA-14",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -28.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+19"
+      },
+      {
+        "id": "HI-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 20.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+13"
+      },
+      {
+        "id": "HI-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 20.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+13"
+      },
+      {
+        "id": "IA-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0,
+        "model_p_d_win": 0.5044,
+        "note": ""
+      },
+      {
+        "id": "IA-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.207,
+        "expected_margin": -3.86,
+        "model_p_d_win": 0.20775,
+        "note": "Hinson running for Senate"
+      },
+      {
+        "id": "IA-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Tilt R",
+        "rating_p_d_win": 0.427,
+        "expected_margin": -1.11,
+        "model_p_d_win": 0.42515,
+        "note": ""
+      },
+      {
+        "id": "IA-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -23,
+        "model_p_d_win": 0,
+        "note": "PVI R+15"
+      },
+      {
+        "id": "ID-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -32.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+22"
+      },
+      {
+        "id": "ID-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "IL-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 27.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+18"
+      },
+      {
+        "id": "IL-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 27.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+18"
+      },
+      {
+        "id": "IL-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 27.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+18"
+      },
+      {
+        "id": "IL-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 27.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+18"
+      },
+      {
+        "id": "IL-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 28.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+19"
+      },
+      {
+        "id": "IL-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.9276,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "IL-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 49.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+34"
+      },
+      {
+        "id": "IL-08",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.98,
+        "expected_margin": 9,
+        "model_p_d_win": 0.98985,
+        "note": "PVI D+5"
+      },
+      {
+        "id": "IL-09",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 28.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+19"
+      },
+      {
+        "id": "IL-10",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 17.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+11"
+      },
+      {
+        "id": "IL-11",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.991,
+        "expected_margin": 10.4,
+        "model_p_d_win": 0.9965,
+        "note": "PVI D+6"
+      },
+      {
+        "id": "IL-12",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -32.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+22"
+      },
+      {
+        "id": "IL-13",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.98,
+        "expected_margin": 9,
+        "model_p_d_win": 0.9909,
+        "note": "PVI D+5"
+      },
+      {
+        "id": "IL-14",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.96635,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "IL-15",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -31.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+21"
+      },
+      {
+        "id": "IL-16",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "IL-17",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.92985,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "IN-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.764,
+        "expected_margin": 3.4,
+        "model_p_d_win": 0.79165,
+        "note": "PVI D+1"
+      },
+      {
+        "id": "IN-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -20.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+13"
+      },
+      {
+        "id": "IN-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -24.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+16"
+      },
+      {
+        "id": "IN-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -24.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+16"
+      },
+      {
+        "id": "IN-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0.00005,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "IN-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -25.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+17"
+      },
+      {
+        "id": "IN-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 31.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+21"
+      },
+      {
+        "id": "IN-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -27.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+18"
+      },
+      {
+        "id": "IN-09",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -24.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+16"
+      },
+      {
+        "id": "KS-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -25.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+17"
+      },
+      {
+        "id": "KS-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "KS-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.764,
+        "expected_margin": 3.4,
+        "model_p_d_win": 0.79495,
+        "note": "PVI D+1"
+      },
+      {
+        "id": "KS-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "KY-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -34.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+23"
+      },
+      {
+        "id": "KY-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -30,
+        "model_p_d_win": 0,
+        "note": "PVI R+20"
+      },
+      {
+        "id": "KY-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 16,
+        "model_p_d_win": 1,
+        "note": "PVI D+10"
+      },
+      {
+        "id": "KY-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -27.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+18"
+      },
+      {
+        "id": "KY-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -46.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+32"
+      },
+      {
+        "id": "KY-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.004,
+        "expected_margin": -11.8,
+        "model_p_d_win": 0.00125,
+        "note": "PVI R+7"
+      },
+      {
+        "id": "LA-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -30,
+        "model_p_d_win": 0,
+        "note": "PVI R+20"
+      },
+      {
+        "id": "LA-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 25.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+17"
+      },
+      {
+        "id": "LA-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -34.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+23"
+      },
+      {
+        "id": "LA-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -38.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+26"
+      },
+      {
+        "id": "LA-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -28.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+19"
+      },
+      {
+        "id": "LA-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.99985,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "MA-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.99985,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "MA-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 20.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+13"
+      },
+      {
+        "id": "MA-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 17.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+11"
+      },
+      {
+        "id": "MA-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 17.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+11"
+      },
+      {
+        "id": "MA-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 35.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+24"
+      },
+      {
+        "id": "MA-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 17.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+11"
+      },
+      {
+        "id": "MA-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 49.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+34"
+      },
+      {
+        "id": "MA-08",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 23,
+        "model_p_d_win": 1,
+        "note": "PVI D+15"
+      },
+      {
+        "id": "MA-09",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.996,
+        "expected_margin": 11.8,
+        "model_p_d_win": 0.999,
+        "note": "PVI D+7"
+      },
+      {
+        "id": "MD-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0.00005,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "MD-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 14.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+9"
+      },
+      {
+        "id": "MD-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 18.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+12"
+      },
+      {
+        "id": "MD-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 56.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+39"
+      },
+      {
+        "id": "MD-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 25.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+17"
+      },
+      {
+        "id": "MD-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.92975,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "MD-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 45.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+31"
+      },
+      {
+        "id": "MD-08",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 44,
+        "model_p_d_win": 1,
+        "note": "PVI D+30"
+      },
+      {
+        "id": "ME-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 17.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+11"
+      },
+      {
+        "id": "ME-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.173,
+        "expected_margin": -4.44,
+        "model_p_d_win": 0.17355,
+        "note": "Golden retiring; was D-held"
+      },
+      {
+        "id": "MI-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "MI-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -24.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+16"
+      },
+      {
+        "id": "MI-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.92945,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "MI-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.227,
+        "expected_margin": -3.54,
+        "model_p_d_win": 0.2092,
+        "note": ""
+      },
+      {
+        "id": "MI-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "MI-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 18.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+12"
+      },
+      {
+        "id": "MI-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0,
+        "model_p_d_win": 0.49815,
+        "note": ""
+      },
+      {
+        "id": "MI-08",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Tilt D",
+        "rating_p_d_win": 0.551,
+        "expected_margin": 0.6,
+        "model_p_d_win": 0.55955,
+        "note": "PVI R+1"
+      },
+      {
+        "id": "MI-09",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -24.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+16"
+      },
+      {
+        "id": "MI-10",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Tilt R",
+        "rating_p_d_win": 0.387,
+        "expected_margin": -1.53,
+        "model_p_d_win": 0.3883,
+        "note": "James running for gov"
+      },
+      {
+        "id": "MI-11",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.9999,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "MI-12",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 32.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+22"
+      },
+      {
+        "id": "MI-13",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 32.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+22"
+      },
+      {
+        "id": "MN-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.009,
+        "expected_margin": -10.4,
+        "model_p_d_win": 0.00335,
+        "note": "PVI R+6"
+      },
+      {
+        "id": "MN-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.93305,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "MN-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 16,
+        "model_p_d_win": 1,
+        "note": "PVI D+10"
+      },
+      {
+        "id": "MN-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 27.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+18"
+      },
+      {
+        "id": "MN-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 45.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+31"
+      },
+      {
+        "id": "MN-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "MN-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -28.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+19"
+      },
+      {
+        "id": "MN-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.004,
+        "expected_margin": -11.8,
+        "model_p_d_win": 0.0007,
+        "note": "PVI R+7"
+      },
+      {
+        "id": "MO-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 41.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+28"
+      },
+      {
+        "id": "MO-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.02,
+        "expected_margin": -9,
+        "model_p_d_win": 0.0103,
+        "note": "PVI R+5"
+      },
+      {
+        "id": "MO-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "MO-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -32.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+22"
+      },
+      {
+        "id": "MO-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 18.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+12"
+      },
+      {
+        "id": "MO-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -30,
+        "model_p_d_win": 0,
+        "note": "PVI R+20"
+      },
+      {
+        "id": "MO-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -32.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+22"
+      },
+      {
+        "id": "MO-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -41.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+28"
+      },
+      {
+        "id": "MS-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -27.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+18"
+      },
+      {
+        "id": "MS-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 17.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+11"
+      },
+      {
+        "id": "MS-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "MS-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -31.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+21"
+      },
+      {
+        "id": "MT-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.247,
+        "expected_margin": -3.23,
+        "model_p_d_win": 0.2508,
+        "note": "Zinke retiring"
+      },
+      {
+        "id": "MT-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -23,
+        "model_p_d_win": 0,
+        "note": "PVI R+15"
+      },
+      {
+        "id": "NC-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.28,
+        "expected_margin": -3.1,
+        "model_p_d_win": 0.2674,
+        "note": "NC redraw flips Davis seat"
+      },
+      {
+        "id": "NC-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 25.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+17"
+      },
+      {
+        "id": "NC-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "NC-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 32.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+22"
+      },
+      {
+        "id": "NC-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "NC-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "NC-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.004,
+        "expected_margin": -11.8,
+        "model_p_d_win": 0.00105,
+        "note": "PVI R+7"
+      },
+      {
+        "id": "NC-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "NC-09",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.001,
+        "expected_margin": -13.2,
+        "model_p_d_win": 0.0004,
+        "note": "PVI R+8"
+      },
+      {
+        "id": "NC-10",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "NC-11",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.3,
+        "expected_margin": -2.79,
+        "model_p_d_win": 0.2881,
+        "note": ""
+      },
+      {
+        "id": "NC-12",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 35.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+24"
+      },
+      {
+        "id": "NC-13",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "NC-14",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "ND-AL",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -28.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+19"
+      },
+      {
+        "id": "NE-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.004,
+        "expected_margin": -11.8,
+        "model_p_d_win": 0.0012,
+        "note": "PVI R+7"
+      },
+      {
+        "id": "NE-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.687,
+        "expected_margin": 2.59,
+        "model_p_d_win": 0.6849,
+        "note": "Bacon retiring (R)"
+      },
+      {
+        "id": "NE-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -39.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+27"
+      },
+      {
+        "id": "NH-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.764,
+        "expected_margin": 3.4,
+        "model_p_d_win": 0.79545,
+        "note": "PVI D+1"
+      },
+      {
+        "id": "NH-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.846,
+        "expected_margin": 4.8,
+        "model_p_d_win": 0.8713,
+        "note": "PVI D+2"
+      },
+      {
+        "id": "NJ-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 16,
+        "model_p_d_win": 1,
+        "note": "PVI D+10"
+      },
+      {
+        "id": "NJ-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.02,
+        "expected_margin": -9,
+        "model_p_d_win": 0.00985,
+        "note": "PVI R+5"
+      },
+      {
+        "id": "NJ-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.98,
+        "expected_margin": 9,
+        "model_p_d_win": 0.98955,
+        "note": "PVI D+5"
+      },
+      {
+        "id": "NJ-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "NJ-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.92795,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "NJ-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.991,
+        "expected_margin": 10.4,
+        "model_p_d_win": 0.9965,
+        "note": "PVI D+6"
+      },
+      {
+        "id": "NJ-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0,
+        "model_p_d_win": 0.50065,
+        "note": ""
+      },
+      {
+        "id": "NJ-08",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 25.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+17"
+      },
+      {
+        "id": "NJ-09",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.9642,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "NJ-10",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 41.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+28"
+      },
+      {
+        "id": "NJ-11",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.991,
+        "expected_margin": 10.4,
+        "model_p_d_win": 0.99685,
+        "note": "PVI D+6"
+      },
+      {
+        "id": "NJ-12",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 21.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+14"
+      },
+      {
+        "id": "NM-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.991,
+        "expected_margin": 10.4,
+        "model_p_d_win": 0.99685,
+        "note": "PVI D+6"
+      },
+      {
+        "id": "NM-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.664,
+        "expected_margin": 2,
+        "model_p_d_win": 0.67825,
+        "note": "PVI EVEN"
+      },
+      {
+        "id": "NM-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.92995,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "NV-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.827,
+        "expected_margin": 4.44,
+        "model_p_d_win": 0.84975,
+        "note": ""
+      },
+      {
+        "id": "NV-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.004,
+        "expected_margin": -11.8,
+        "model_p_d_win": 0.0015,
+        "note": "PVI R+7"
+      },
+      {
+        "id": "NV-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.72,
+        "expected_margin": 3.1,
+        "model_p_d_win": 0.73255,
+        "note": ""
+      },
+      {
+        "id": "NV-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.846,
+        "expected_margin": 4.8,
+        "model_p_d_win": 0.87185,
+        "note": "PVI D+2"
+      },
+      {
+        "id": "NY-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.054,
+        "expected_margin": -7.6,
+        "model_p_d_win": 0.0342,
+        "note": "PVI R+4"
+      },
+      {
+        "id": "NY-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.02,
+        "expected_margin": -9,
+        "model_p_d_win": 0.00955,
+        "note": "PVI R+5"
+      },
+      {
+        "id": "NY-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.764,
+        "expected_margin": 3.4,
+        "model_p_d_win": 0.78675,
+        "note": "PVI D+1"
+      },
+      {
+        "id": "NY-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.906,
+        "expected_margin": 6.2,
+        "model_p_d_win": 0.9301,
+        "note": "PVI D+3"
+      },
+      {
+        "id": "NY-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 37,
+        "model_p_d_win": 1,
+        "note": "PVI D+25"
+      },
+      {
+        "id": "NY-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.9998,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "NY-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 38.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+26"
+      },
+      {
+        "id": "NY-08",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 35.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+24"
+      },
+      {
+        "id": "NY-09",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 32.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+22"
+      },
+      {
+        "id": "NY-10",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 46.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+32"
+      },
+      {
+        "id": "NY-11",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "NY-12",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 49.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+34"
+      },
+      {
+        "id": "NY-13",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 49.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+34"
+      },
+      {
+        "id": "NY-14",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 31.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+21"
+      },
+      {
+        "id": "NY-15",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 44,
+        "model_p_d_win": 1,
+        "note": "PVI D+30"
+      },
+      {
+        "id": "NY-16",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 28.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+19"
+      },
+      {
+        "id": "NY-17",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Tilt R",
+        "rating_p_d_win": 0.427,
+        "expected_margin": -1.11,
+        "model_p_d_win": 0.4203,
+        "note": ""
+      },
+      {
+        "id": "NY-18",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.846,
+        "expected_margin": 4.8,
+        "model_p_d_win": 0.87185,
+        "note": "PVI D+2"
+      },
+      {
+        "id": "NY-19",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.764,
+        "expected_margin": 3.4,
+        "model_p_d_win": 0.78945,
+        "note": "PVI D+1"
+      },
+      {
+        "id": "NY-20",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.99975,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "NY-21",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "NY-22",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.96405,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "NY-23",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "NY-24",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "NY-25",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 14.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+9"
+      },
+      {
+        "id": "NY-26",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 16,
+        "model_p_d_win": 1,
+        "note": "PVI D+10"
+      },
+      {
+        "id": "OH-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Tilt D",
+        "rating_p_d_win": 0.647,
+        "expected_margin": 2,
+        "model_p_d_win": 0.6547,
+        "note": "OH redraw pressure"
+      },
+      {
+        "id": "OH-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -35.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+24"
+      },
+      {
+        "id": "OH-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 31.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+21"
+      },
+      {
+        "id": "OH-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -28.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+19"
+      },
+      {
+        "id": "OH-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -23,
+        "model_p_d_win": 0,
+        "note": "PVI R+15"
+      },
+      {
+        "id": "OH-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -24.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+16"
+      },
+      {
+        "id": "OH-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.009,
+        "expected_margin": -10.4,
+        "model_p_d_win": 0.0038,
+        "note": "PVI R+6"
+      },
+      {
+        "id": "OH-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "OH-09",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.46,
+        "expected_margin": -1.5,
+        "model_p_d_win": 0.4025,
+        "note": "OH redraw materially redder"
+      },
+      {
+        "id": "OH-10",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.094,
+        "expected_margin": -6.2,
+        "model_p_d_win": 0.0723,
+        "note": "PVI R+3"
+      },
+      {
+        "id": "OH-11",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 41.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+28"
+      },
+      {
+        "id": "OH-12",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -25.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+17"
+      },
+      {
+        "id": "OH-13",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.664,
+        "expected_margin": 2,
+        "model_p_d_win": 0.6828,
+        "note": "PVI EVEN"
+      },
+      {
+        "id": "OH-14",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "OH-15",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.02,
+        "expected_margin": -9,
+        "model_p_d_win": 0.00825,
+        "note": "PVI R+5"
+      },
+      {
+        "id": "OK-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "OK-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -42.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+29"
+      },
+      {
+        "id": "OK-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -35.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+24"
+      },
+      {
+        "id": "OK-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -27.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+18"
+      },
+      {
+        "id": "OK-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "OR-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 28.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+19"
+      },
+      {
+        "id": "OR-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "OR-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 34.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+23"
+      },
+      {
+        "id": "OR-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.991,
+        "expected_margin": 10.4,
+        "model_p_d_win": 0.99725,
+        "note": "PVI D+6"
+      },
+      {
+        "id": "OR-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.96435,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "OR-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.98,
+        "expected_margin": 9,
+        "model_p_d_win": 0.9911,
+        "note": "PVI D+5"
+      },
+      {
+        "id": "PA-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.227,
+        "expected_margin": -3.54,
+        "model_p_d_win": 0.2112,
+        "note": ""
+      },
+      {
+        "id": "PA-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 28.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+19"
+      },
+      {
+        "id": "PA-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 56.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+39"
+      },
+      {
+        "id": "PA-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.99975,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "PA-05",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 23,
+        "model_p_d_win": 1,
+        "note": "PVI D+15"
+      },
+      {
+        "id": "PA-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.991,
+        "expected_margin": 10.4,
+        "model_p_d_win": 0.99615,
+        "note": "PVI D+6"
+      },
+      {
+        "id": "PA-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0,
+        "model_p_d_win": 0.49865,
+        "note": ""
+      },
+      {
+        "id": "PA-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Tilt R",
+        "rating_p_d_win": 0.387,
+        "expected_margin": -1.53,
+        "model_p_d_win": 0.38015,
+        "note": ""
+      },
+      {
+        "id": "PA-09",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -30,
+        "model_p_d_win": 0,
+        "note": "PVI R+20"
+      },
+      {
+        "id": "PA-10",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0,
+        "model_p_d_win": 0.499,
+        "note": ""
+      },
+      {
+        "id": "PA-11",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "PA-12",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 14.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+9"
+      },
+      {
+        "id": "PA-13",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -34.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+23"
+      },
+      {
+        "id": "PA-14",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -25.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+17"
+      },
+      {
+        "id": "PA-15",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -30,
+        "model_p_d_win": 0,
+        "note": "PVI R+20"
+      },
+      {
+        "id": "PA-16",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "PA-17",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.846,
+        "expected_margin": 4.8,
+        "model_p_d_win": 0.87025,
+        "note": "PVI D+2"
+      },
+      {
+        "id": "RI-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 18.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+12"
+      },
+      {
+        "id": "RI-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.946,
+        "expected_margin": 7.6,
+        "model_p_d_win": 0.96515,
+        "note": "PVI D+4"
+      },
+      {
+        "id": "SC-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.1,
+        "expected_margin": -6.05,
+        "model_p_d_win": 0.1031,
+        "note": "Mace running for gov"
+      },
+      {
+        "id": "SC-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.004,
+        "expected_margin": -11.8,
+        "model_p_d_win": 0.0013,
+        "note": "PVI R+7"
+      },
+      {
+        "id": "SC-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -31.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+21"
+      },
+      {
+        "id": "SC-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "SC-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "SC-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 20.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+13"
+      },
+      {
+        "id": "SC-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "SD-AL",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -23,
+        "model_p_d_win": 0,
+        "note": "PVI R+15"
+      },
+      {
+        "id": "TN-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -42.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+29"
+      },
+      {
+        "id": "TN-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -25.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+17"
+      },
+      {
+        "id": "TN-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -27.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+18"
+      },
+      {
+        "id": "TN-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -31.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+21"
+      },
+      {
+        "id": "TN-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.001,
+        "expected_margin": -13.2,
+        "model_p_d_win": 0.0003,
+        "note": "PVI R+8"
+      },
+      {
+        "id": "TN-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -25.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+17"
+      },
+      {
+        "id": "TN-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "TN-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -30,
+        "model_p_d_win": 0,
+        "note": "PVI R+20"
+      },
+      {
+        "id": "TN-09",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 34.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+23"
+      },
+      {
+        "id": "TX-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -37,
+        "model_p_d_win": 0,
+        "note": "PVI R+25"
+      },
+      {
+        "id": "TX-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "TX-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0.00005,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "TX-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -24.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+16"
+      },
+      {
+        "id": "TX-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -20.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+13"
+      },
+      {
+        "id": "TX-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "TX-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 18.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+12"
+      },
+      {
+        "id": "TX-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -24.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+16"
+      },
+      {
+        "id": "TX-09",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 35.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+24"
+      },
+      {
+        "id": "TX-10",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "TX-11",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -32.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+22"
+      },
+      {
+        "id": "TX-12",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "TX-13",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -35.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+24"
+      },
+      {
+        "id": "TX-14",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -25.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+17"
+      },
+      {
+        "id": "TX-15",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.12,
+        "expected_margin": -5.54,
+        "model_p_d_win": 0.10335,
+        "note": ""
+      },
+      {
+        "id": "TX-16",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 18.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+12"
+      },
+      {
+        "id": "TX-17",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "TX-18",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 32.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+22"
+      },
+      {
+        "id": "TX-19",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -37,
+        "model_p_d_win": 0,
+        "note": "PVI R+25"
+      },
+      {
+        "id": "TX-20",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 20.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+13"
+      },
+      {
+        "id": "TX-21",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "TX-22",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "TX-23",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.247,
+        "expected_margin": -3.23,
+        "model_p_d_win": 0.2289,
+        "note": "TX redraw"
+      },
+      {
+        "id": "TX-24",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.001,
+        "expected_margin": -13.2,
+        "model_p_d_win": 0.00015,
+        "note": "PVI R+8"
+      },
+      {
+        "id": "TX-25",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -27.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+18"
+      },
+      {
+        "id": "TX-26",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "TX-27",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "TX-28",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.687,
+        "expected_margin": 2.59,
+        "model_p_d_win": 0.69805,
+        "note": "TX redraw pressure on Cuellar"
+      },
+      {
+        "id": "TX-29",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 21.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+14"
+      },
+      {
+        "id": "TX-30",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 38.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+26"
+      },
+      {
+        "id": "TX-31",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "TX-32",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 21.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+14"
+      },
+      {
+        "id": "TX-33",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 31.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+21"
+      },
+      {
+        "id": "TX-34",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0,
+        "model_p_d_win": 0.50535,
+        "note": "TX redraw"
+      },
+      {
+        "id": "TX-35",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.207,
+        "expected_margin": -3.86,
+        "model_p_d_win": 0.20765,
+        "note": "New TX seat"
+      },
+      {
+        "id": "TX-36",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -27.2,
+        "model_p_d_win": 0,
+        "note": "PVI R+18"
+      },
+      {
+        "id": "TX-37",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 37,
+        "model_p_d_win": 1,
+        "note": "PVI D+25"
+      },
+      {
+        "id": "TX-38",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "UT-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "UT-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "PVI R+10"
+      },
+      {
+        "id": "UT-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "UT-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -21.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+14"
+      },
+      {
+        "id": "VA-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean R",
+        "rating_p_d_win": 0.313,
+        "expected_margin": -2.59,
+        "model_p_d_win": 0.3079,
+        "note": ""
+      },
+      {
+        "id": "VA-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0,
+        "model_p_d_win": 0.50125,
+        "note": ""
+      },
+      {
+        "id": "VA-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 27.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+18"
+      },
+      {
+        "id": "VA-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 24.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+16"
+      },
+      {
+        "id": "VA-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.009,
+        "expected_margin": -10.4,
+        "model_p_d_win": 0.0035,
+        "note": "PVI R+6"
+      },
+      {
+        "id": "VA-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "VA-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.846,
+        "expected_margin": 4.8,
+        "model_p_d_win": 0.8748,
+        "note": "PVI D+2"
+      },
+      {
+        "id": "VA-08",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 38.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+26"
+      },
+      {
+        "id": "VA-09",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -32.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+22"
+      },
+      {
+        "id": "VA-10",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.991,
+        "expected_margin": 10.4,
+        "model_p_d_win": 0.9965,
+        "note": "PVI D+6"
+      },
+      {
+        "id": "VA-11",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 28.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+19"
+      },
+      {
+        "id": "VT-AL",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 24.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+16"
+      },
+      {
+        "id": "WA-01",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 23,
+        "model_p_d_win": 1,
+        "note": "PVI D+15"
+      },
+      {
+        "id": "WA-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 17.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+11"
+      },
+      {
+        "id": "WA-03",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Tilt D",
+        "rating_p_d_win": 0.613,
+        "expected_margin": 1.53,
+        "model_p_d_win": 0.62665,
+        "note": "Gluesenkamp Perez — three different ratings"
+      },
+      {
+        "id": "WA-04",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -17.4,
+        "model_p_d_win": 0,
+        "note": "PVI R+11"
+      },
+      {
+        "id": "WA-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.009,
+        "expected_margin": -10.4,
+        "model_p_d_win": 0.00345,
+        "note": "PVI R+6"
+      },
+      {
+        "id": "WA-06",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 14.6,
+        "model_p_d_win": 1,
+        "note": "PVI D+9"
+      },
+      {
+        "id": "WA-07",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 55.2,
+        "model_p_d_win": 1,
+        "note": "PVI D+38"
+      },
+      {
+        "id": "WA-08",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.846,
+        "expected_margin": 4.8,
+        "model_p_d_win": 0.8734,
+        "note": "PVI D+2"
+      },
+      {
+        "id": "WA-09",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 32.8,
+        "model_p_d_win": 1,
+        "note": "PVI D+22"
+      },
+      {
+        "id": "WA-10",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.999,
+        "expected_margin": 13.2,
+        "model_p_d_win": 0.9999,
+        "note": "PVI D+8"
+      },
+      {
+        "id": "WI-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.173,
+        "expected_margin": -4.44,
+        "model_p_d_win": 0.1562,
+        "note": ""
+      },
+      {
+        "id": "WI-02",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 30,
+        "model_p_d_win": 1,
+        "note": "PVI D+20"
+      },
+      {
+        "id": "WI-03",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.46,
+        "expected_margin": -0.6,
+        "model_p_d_win": 0.4649,
+        "note": ""
+      },
+      {
+        "id": "WI-04",
+        "chamber": "house",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 1,
+        "expected_margin": 38.4,
+        "model_p_d_win": 1,
+        "note": "PVI D+26"
+      },
+      {
+        "id": "WI-05",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "WI-06",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "WI-07",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -18.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+12"
+      },
+      {
+        "id": "WI-08",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -14.6,
+        "model_p_d_win": 0.00005,
+        "note": "PVI R+9"
+      },
+      {
+        "id": "WV-01",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -32.8,
+        "model_p_d_win": 0,
+        "note": "PVI R+22"
+      },
+      {
+        "id": "WV-02",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -30,
+        "model_p_d_win": 0,
+        "note": "PVI R+20"
+      },
+      {
+        "id": "WY-AL",
+        "chamber": "house",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0,
+        "expected_margin": -35.6,
+        "model_p_d_win": 0,
+        "note": "PVI R+24"
+      }
+    ],
+    "senate": [
+      {
+        "id": "AL-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -22,
+        "model_p_d_win": 0,
+        "note": "Tuberville running for gov; open R"
+      },
+      {
+        "id": "AK-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 1,
+        "model_p_d_win": 0.56395,
+        "note": "Peltola (D) vs Sullivan (R-i); RCV; Sullivan re-elect at record low"
+      },
+      {
+        "id": "AR-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -28,
+        "model_p_d_win": 0,
+        "note": "Cotton (R-i) safe"
+      },
+      {
+        "id": "CO-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Safe D",
+        "rating_p_d_win": 0.99,
+        "expected_margin": 9,
+        "model_p_d_win": 0.99055,
+        "note": "Hickenlooper (D-i)"
+      },
+      {
+        "id": "DE-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.99,
+        "expected_margin": 21,
+        "model_p_d_win": 1,
+        "note": "Coons (D-i)"
+      },
+      {
+        "id": "FL-SEN-SP",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.12,
+        "expected_margin": -9,
+        "model_p_d_win": 0.0416,
+        "note": "Moody (R-appt) vs Vindman (D); one outlier poll showed D+2"
+      },
+      {
+        "id": "GA-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.72,
+        "expected_margin": 4,
+        "model_p_d_win": 0.78625,
+        "note": "Ossoff (D-i) vs Collins/Dooley R-runoff; Ossoff at/near 50 in polls"
+      },
+      {
+        "id": "ID-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -32,
+        "model_p_d_win": 0,
+        "note": "Risch (R-i)"
+      },
+      {
+        "id": "IL-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Safe D",
+        "rating_p_d_win": 0.99,
+        "expected_margin": 14,
+        "model_p_d_win": 1,
+        "note": "Open D (Durbin); Stratton (D) won primary"
+      },
+      {
+        "id": "IA-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.12,
+        "expected_margin": -7,
+        "model_p_d_win": 0.10485,
+        "note": "Open R (Ernst retired); Hinson (R) vs Wahls/Turek/Sage (D)"
+      },
+      {
+        "id": "KS-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -13,
+        "model_p_d_win": 0.00005,
+        "note": "Marshall (R-i)"
+      },
+      {
+        "id": "KY-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -17,
+        "model_p_d_win": 0,
+        "note": "Open R (McConnell retired); Barr (R) vs Booker (D)"
+      },
+      {
+        "id": "LA-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -16,
+        "model_p_d_win": 0,
+        "note": "Cassidy lost primary; two R advanced; jungle primary"
+      },
+      {
+        "id": "ME-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 3.5,
+        "model_p_d_win": 0.7451,
+        "note": "Collins (R-i) vs Platner (D); Platner +7 in latest poll"
+      },
+      {
+        "id": "MA-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.99,
+        "expected_margin": 30,
+        "model_p_d_win": 1,
+        "note": "Markey (D-i)"
+      },
+      {
+        "id": "MI-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": -1.5,
+        "model_p_d_win": 0.3994,
+        "note": "Open D (Peters); Rogers (R) vs Stevens/McMorrow/El-Sayed (D primary 8/4)"
+      },
+      {
+        "id": "MN-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Likely D",
+        "rating_p_d_win": 0.88,
+        "expected_margin": 7,
+        "model_p_d_win": 0.9391,
+        "note": "Open D (Smith); Craig vs Flanagan (D primary); Royce White likely R"
+      },
+      {
+        "id": "MS-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -11,
+        "model_p_d_win": 0.00105,
+        "note": "Hyde-Smith (R-i)"
+      },
+      {
+        "id": "MT-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.12,
+        "expected_margin": -13,
+        "model_p_d_win": 0.00175,
+        "note": "Open R (Daines); messy R primary"
+      },
+      {
+        "id": "NE-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Likely R",
+        "rating_p_d_win": 0.12,
+        "expected_margin": -8,
+        "model_p_d_win": 0.0475,
+        "note": "Ricketts (R-i) vs Osborn (I); Osborn outraised in Q1"
+      },
+      {
+        "id": "NH-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.72,
+        "expected_margin": 3,
+        "model_p_d_win": 0.7249,
+        "note": "Open D (Shaheen); Pappas (D) vs Sununu (R)"
+      },
+      {
+        "id": "NJ-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Safe D",
+        "rating_p_d_win": 0.99,
+        "expected_margin": 14,
+        "model_p_d_win": 0.99985,
+        "note": "Booker (D-i)"
+      },
+      {
+        "id": "NM-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Safe D",
+        "rating_p_d_win": 0.99,
+        "expected_margin": 8,
+        "model_p_d_win": 0.97955,
+        "note": "Luján (D-i)"
+      },
+      {
+        "id": "NC-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Lean D",
+        "rating_p_d_win": 0.72,
+        "expected_margin": 5,
+        "model_p_d_win": 0.835,
+        "note": "Open R (Tillis); Cooper (D) vs Whatley (R); Cooper +11 polling, regressed"
+      },
+      {
+        "id": "OH-SEN-SP",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Toss-up",
+        "rating_p_d_win": 0.5,
+        "expected_margin": 0.5,
+        "model_p_d_win": 0.53825,
+        "note": "Husted (R-appt) vs Brown (D); poll-tightening; PVI R+6"
+      },
+      {
+        "id": "OK-SEN-SP",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -19,
+        "model_p_d_win": 0,
+        "note": "Open R (Mullin-Armstrong); R primary 6/16"
+      },
+      {
+        "id": "OR-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Safe D",
+        "rating_p_d_win": 0.99,
+        "expected_margin": 14,
+        "model_p_d_win": 0.9999,
+        "note": "Merkley (D-i)"
+      },
+      {
+        "id": "RI-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Solid D",
+        "rating_p_d_win": 0.99,
+        "expected_margin": 20,
+        "model_p_d_win": 1,
+        "note": "Reed (D-i)"
+      },
+      {
+        "id": "SC-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -12,
+        "model_p_d_win": 0.00045,
+        "note": "Graham (R-i)"
+      },
+      {
+        "id": "SD-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -25,
+        "model_p_d_win": 0,
+        "note": "Rounds (R-i)"
+      },
+      {
+        "id": "TN-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -19,
+        "model_p_d_win": 0,
+        "note": "Hagerty (R-i)"
+      },
+      {
+        "id": "TX-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Tilt R",
+        "rating_p_d_win": 0.38,
+        "expected_margin": -3,
+        "model_p_d_win": 0.3155,
+        "note": "Cornyn (R-i) in runoff vs Paxton 5/26; Talarico (D) competitive in polls; Paxton candidate-quality risk"
+      },
+      {
+        "id": "VA-SEN",
+        "chamber": "senate",
+        "incumbent_party": "D",
+        "rating_consensus": "Safe D",
+        "rating_p_d_win": 0.99,
+        "expected_margin": 8,
+        "model_p_d_win": 0.9806,
+        "note": "Warner (D-i)"
+      },
+      {
+        "id": "WV-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -33,
+        "model_p_d_win": 0,
+        "note": "Capito (R-i)"
+      },
+      {
+        "id": "WY-SEN",
+        "chamber": "senate",
+        "incumbent_party": "R",
+        "rating_consensus": "Solid R",
+        "rating_p_d_win": 0.01,
+        "expected_margin": -38,
+        "model_p_d_win": 0,
+        "note": "Open R (Lummis retired); safe"
+      }
+    ]
+  },
+  "tipping_point_house": [
+    {
+      "id": "MI-08",
+      "rating_consensus": "Tilt D",
+      "p_decisive": 0.0332
+    },
+    {
+      "id": "PA-08",
+      "rating_consensus": "Tilt R",
+      "p_decisive": 0.0274
+    },
+    {
+      "id": "MI-10",
+      "rating_consensus": "Tilt R",
+      "p_decisive": 0.0248
+    },
+    {
+      "id": "CO-08",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0244
+    },
+    {
+      "id": "OH-01",
+      "rating_consensus": "Tilt D",
+      "p_decisive": 0.024
+    },
+    {
+      "id": "FL-22",
+      "rating_consensus": "Lean R",
+      "p_decisive": 0.0234
+    },
+    {
+      "id": "IA-03",
+      "rating_consensus": "Tilt R",
+      "p_decisive": 0.0228
+    },
+    {
+      "id": "VA-01",
+      "rating_consensus": "Lean R",
+      "p_decisive": 0.0228
+    },
+    {
+      "id": "MI-07",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0226
+    },
+    {
+      "id": "NJ-07",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0226
+    },
+    {
+      "id": "AZ-06",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0224
+    },
+    {
+      "id": "NM-02",
+      "rating_consensus": "Lean D",
+      "p_decisive": 0.0224
+    },
+    {
+      "id": "OH-13",
+      "rating_consensus": "Lean D",
+      "p_decisive": 0.0224
+    },
+    {
+      "id": "FL-14",
+      "rating_consensus": "Tilt R",
+      "p_decisive": 0.022
+    },
+    {
+      "id": "CA-22",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0216
+    },
+    {
+      "id": "CA-48",
+      "rating_consensus": "Lean D",
+      "p_decisive": 0.0212
+    },
+    {
+      "id": "NY-17",
+      "rating_consensus": "Tilt R",
+      "p_decisive": 0.021
+    },
+    {
+      "id": "PA-07",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.021
+    },
+    {
+      "id": "PA-10",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.021
+    },
+    {
+      "id": "FL-25",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0208
+    },
+    {
+      "id": "MT-01",
+      "rating_consensus": "Lean R",
+      "p_decisive": 0.0208
+    },
+    {
+      "id": "OH-09",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0204
+    },
+    {
+      "id": "IA-01",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0202
+    },
+    {
+      "id": "AZ-01",
+      "rating_consensus": "Toss-up",
+      "p_decisive": 0.0196
+    },
+    {
+      "id": "NC-11",
+      "rating_consensus": "Lean R",
+      "p_decisive": 0.0196
+    }
+  ]
+}

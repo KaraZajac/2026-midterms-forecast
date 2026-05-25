@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2026 Midterms — Monte Carlo Forecast</title>
+<meta name="description" content="Open-source Monte Carlo forecast of the 2026 U.S. midterm elections. Synthesizes Cook/Sabato/Inside Elections ratings, head-to-head polling, presidential approval, and historical midterm patterns into a per-race win-probability model and full seat-distribution posterior." />
+<link rel="stylesheet" href="assets/styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="classification">FORECAST · 2026 U.S. MIDTERMS · ELECTION DAY 2026-11-03 · 162 DAYS OUT</div>
+
+<header class="site">
+  <h1>2026 Midterm Elections — Monte Carlo Forecast</h1>
+  <div class="sub">Per-race priors synthesized from Cook / Sabato / Inside Elections ratings, head-to-head polls, presidential approval, and historical midterm patterns. 20,000-trial correlated-swing simulation. Both chambers on a knife's edge.</div>
+  <div class="meta">
+    <span><b>As of:</b> <span id="m-asof">—</span></span>
+    <span><b>Trump approval:</b> <span id="m-approval">—</span>%</span>
+    <span><b>Generic ballot:</b> D+<span id="m-genballot">—</span></span>
+    <span><b>Trials:</b> <span id="m-ntrials">—</span></span>
+  </div>
+</header>
+
+<nav class="toc">
+  <a href="#topline">Topline</a>
+  <a href="#distributions">Distributions</a>
+  <a href="#senate">Senate</a>
+  <a href="#house">House</a>
+  <a href="#tipping">Tipping point</a>
+  <a href="#method">Method</a>
+  <a href="#sources">Sources</a>
+  <a href="#caveats">Caveats</a>
+</nav>
+
+<main>
+
+<!-- TOPLINE -->
+<section id="topline">
+  <h2>1 — Topline forecast</h2>
+  <p>What the 20,000-trial Monte Carlo says about who controls Congress on January 3, 2027.</p>
+
+  <div class="verdict">
+    <div class="box">
+      <div class="k">P(Dems win House)</div>
+      <div class="v" id="t-pdh">—</div>
+      <div class="vsm">median D seats: <span id="t-dh-median">—</span> [80% CI <span id="t-dh-p10">—</span>–<span id="t-dh-p90">—</span>]</div>
+    </div>
+    <div class="box">
+      <div class="k">P(Dems win Senate)</div>
+      <div class="v" id="t-pds">—</div>
+      <div class="vsm">median D-caucus: <span id="t-ds-median">—</span> [80% CI <span id="t-ds-p10">—</span>–<span id="t-ds-p90">—</span>]</div>
+    </div>
+    <div class="box">
+      <div class="k">P(D trifecta)</div>
+      <div class="v" id="t-pdt">—</div>
+      <div class="vsm">D wins both chambers</div>
+    </div>
+    <div class="box">
+      <div class="k">P(R trifecta)</div>
+      <div class="v" id="t-prt">—</div>
+      <div class="vsm">R holds both chambers</div>
+    </div>
+  </div>
+
+  <p id="topline-narrative" style="margin-top:18px"></p>
+</section>
+
+<!-- DISTRIBUTIONS -->
+<section id="distributions">
+  <h2>2 — Seat-count distributions</h2>
+  <p>Posterior over chamber seat counts across 20,000 correlated trials. The vertical line marks the control threshold (218 House, 51 Senate). Bars to the right of the line are scenarios where Democrats take control.</p>
+
+  <div class="chart-wrap">
+    <h4>House — D seats out of 435</h4>
+    <p class="cap">Solid line: 218 needed for control. Median is <span id="dist-h-median">—</span>; mean is <span id="dist-h-mean">—</span>.</p>
+    <canvas id="chart-house"></canvas>
+  </div>
+
+  <div class="chart-wrap">
+    <h4>Senate — D-caucus seats out of 100</h4>
+    <p class="cap">Solid line: 51 needed for control (R vice president breaks 50–50 ties). Median is <span id="dist-s-median">—</span>; mean is <span id="dist-s-mean">—</span>.</p>
+    <canvas id="chart-senate"></canvas>
+  </div>
+
+  <div class="chart-wrap">
+    <h4>National environment — D minus R popular-vote swing vs. the May rating baseline (pp)</h4>
+    <p class="cap">Each trial samples a national environment shift from N(<span id="nat-mu">0</span>, <span id="nat-sigma">4</span>) percentage points. This induces correlated movement across all races — when the environment swings D, dozens of seats swing together.</p>
+    <canvas id="chart-natswing"></canvas>
+  </div>
+</section>
+
+<!-- SENATE -->
+<section id="senate">
+  <h2>3 — Senate races</h2>
+  <p>All 35 seats on the ballot in 2026, sorted by competitiveness. Class 2 incumbents not running: Tuberville (AL, gov), Ernst (IA), McConnell (KY), Cassidy (LA, lost primary), Daines (MT), Tillis (NC), Lummis (WY), Durbin (IL), Peters (MI), Smith (MN), Shaheen (NH). Specials: FL (Rubio→Moody), OH (Vance→Husted), OK (Mullin→Armstrong). Democrats start with 35 D-caucus seats not on the ballot and need a net +4 to reach 51.</p>
+
+  <div id="senate-cartogram-wrap" class="chart-wrap">
+    <h4>Senate map — 2026 Class 2 seats</h4>
+    <p class="cap">Each tile is a state up in 2026, colored by P(D wins). Hover for details.</p>
+    <div id="senate-cartogram"></div>
+  </div>
+
+  <h3>Race-by-race</h3>
+  <table id="senate-table">
+    <thead>
+      <tr>
+        <th>State</th>
+        <th>Incumbent</th>
+        <th>Rating</th>
+        <th>Expected margin</th>
+        <th>Model P(D)</th>
+        <th>Δ vs rating</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<!-- HOUSE -->
+<section id="house">
+  <h2>4 — House battleground</h2>
+  <p>The 47 districts where Cook / Sabato / Inside Elections sees any meaningful competition (Toss-up, Lean, or Likely from at least one rater). The other 388 districts are modeled from district PVI and assumed near-certain holds. Sorted by closeness to 50/50.</p>
+
+  <table id="house-table">
+    <thead>
+      <tr>
+        <th>District</th>
+        <th>Incumbent party</th>
+        <th>Rating consensus</th>
+        <th>Expected margin</th>
+        <th>Model P(D)</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<!-- TIPPING POINT -->
+<section id="tipping">
+  <h2>5 — Tipping-point analysis</h2>
+  <p>Across 5,000 trials, which House district most often sits at the median seat — the one whose result decides whether D crosses 218? These are the races where outside money does the most work; flipping one of them is worth a percentage point or more of headline-control probability.</p>
+
+  <table id="tipping-table">
+    <thead>
+      <tr><th>Rank</th><th>District</th><th>Rating</th><th>P(decisive)</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<!-- METHOD -->
+<section id="method">
+  <h2>6 — Method</h2>
+
+  <h3>Per-race priors</h3>
+  <p>Each race has an <i>expected margin</i> (D-share minus R-share, in percentage points) and a <i>race-specific sigma</i>. For House races on the Cook/Sabato/IE radar, we average the three raters' implied P(D wins) and back out a margin assuming the total per-race standard deviation is √(σ<sub>nat</sub>² + σ<sub>race</sub>²) with σ<sub>nat</sub> = 4 pp and σ<sub>race</sub> ∈ {1.2, 2.5, 3.5, 4.5} pp depending on rater confidence. For Senate races we use polling-derived margins where available, regressed partially toward fundamentals (state PVI + incumbency).</p>
+
+  <h3>National environment</h3>
+  <p>Each trial samples a single national swing <code>nat_swing ~ N(0, 4)</code> percentage points. Senate races see a correlated but distinct swing <code>nat_swing_sen = ρ·nat_swing + √(1−ρ²)·N(0,4)</code> with ρ = 0.65. This is the model's most important feature: when the environment moves, races move <i>together</i>, which is why the seat-count distribution has the shape it does rather than being a smooth Gaussian around independent flips.</p>
+
+  <h3>Race outcomes</h3>
+  <p>For each race in each trial:</p>
+  <pre>margin = expected_margin + nat_swing · elasticity + N(0, sigma_race)
+D wins if margin &gt; 0</pre>
+  <p>Elasticity is 1.0 for open seats, ~0.88 for entrenched incumbents (incumbent campaigns absorb some of the national environment).</p>
+
+  <h3>Why center the national swing at 0 rather than at "fundamentals"?</h3>
+  <p>The Cook / Sabato / Inside Elections ratings updated through May 8–21, 2026 already price in Trump's ~38% approval and the D+6.6 generic ballot. Centering at zero is shorthand for "the May ratings are right on average; uncertainty represents how the environment evolves between now and November plus pollster/rater error." Empirically, the 6-month-out generic-ballot-to-final-popular-vote gap has SD ~3–5 pp, which is where σ<sub>nat</sub> = 4 comes from. The model's headline numbers will shift if you change this assumption (see <code>scripts/montecarlo.js</code> top-of-file constants).</p>
+
+  <h3>What this model does NOT do</h3>
+  <ul>
+    <li>It does not model state-level correlated errors (e.g. a regional polling miss in the Sun Belt). All correlation is national.</li>
+    <li>It does not separately model turnout uncertainty. That gets absorbed into σ<sub>nat</sub> and σ<sub>race</sub>.</li>
+    <li>It does not use district-level head-to-head polls (rare in May for House races; the ratings already absorb what's available).</li>
+    <li>It assumes the 9 redistricted states' new lines are reflected in current ratings. For most of those seats the ratings shifted within days of map adoption; for the late-May Florida and Tennessee maps the ratings are still settling.</li>
+    <li>It does not model RCV second-choice flows in Alaska or Maine — both are flagged with wider sigma.</li>
+  </ul>
+
+  <h3>Reproduce</h3>
+  <pre>node scripts/build_priors.js
+node scripts/montecarlo.js 20000
+open index.html</pre>
+  <p>Per-race priors live in <code>assets/race_priors.json</code>; simulation output in <code>assets/results.json</code>; the page is static.</p>
+</section>
+
+<!-- SOURCES -->
+<section id="sources">
+  <h2>7 — Sources</h2>
+  <p>Every cited input is preserved in offline form under <code>sources/</code>. Grouped by what the model uses each one for.</p>
+
+  <h3>Ratings (per-race priors)</h3>
+  <ul>
+    <li><a href="https://www.cookpolitical.com/ratings/house-race-ratings" target="_blank" rel="noopener">Cook Political Report — 2026 House race ratings</a> (May 13, 2026)</li>
+    <li><a href="https://www.cookpolitical.com/ratings/senate-race-ratings" target="_blank" rel="noopener">Cook Political Report — 2026 Senate race ratings</a></li>
+    <li><a href="https://centerforpolitics.org/crystalball/2026-house/" target="_blank" rel="noopener">Sabato's Crystal Ball — 2026 House</a> (May 8, 2026)</li>
+    <li><a href="https://centerforpolitics.org/crystalball/2026-senate/" target="_blank" rel="noopener">Sabato's Crystal Ball — 2026 Senate</a></li>
+    <li><a href="https://www.insideelections.com/ratings/house" target="_blank" rel="noopener">Inside Elections — House ratings</a> (May 21, 2026)</li>
+    <li><a href="https://www.insideelections.com/ratings/senate" target="_blank" rel="noopener">Inside Elections — Senate ratings</a></li>
+  </ul>
+
+  <h3>Polling (Senate margins)</h3>
+  <ul>
+    <li><a href="https://www.realclearpolling.com/polls/senate/general/2026" target="_blank" rel="noopener">RealClearPolling — 2026 Senate</a></li>
+    <li>Carolina Journal / Harper (NC), Emerson (GA / MI / OH / NC), Glengariff (MI), Pan Atlantic (ME), BGSU / Hart (OH), University of Houston (TX), Alaska Survey Research (AK), UNH Survey Center (NH)</li>
+  </ul>
+
+  <h3>Fundamentals (national environment prior)</h3>
+  <ul>
+    <li><a href="https://www.presidency.ucsb.edu/statistics/data/seats-congress-gainedlost-the-presidents-party-mid-term-elections" target="_blank" rel="noopener">American Presidency Project — Midterm seats gained/lost</a> (1934–2022)</li>
+    <li>Gallup presidential job approval history</li>
+    <li>Brookings, <i>Vital Statistics on Congress</i> Table 2-4</li>
+  </ul>
+
+  <h3>Maps &amp; PVI</h3>
+  <ul>
+    <li><a href="https://www.cookpolitical.com/cook-pvi/2025-partisan-voting-index" target="_blank" rel="noopener">Cook PVI 2025</a> (state-level direct; district-level computed from Downballot pres-by-CD data on 2024 lines)</li>
+    <li><a href="https://en.wikipedia.org/wiki/2025%E2%80%932026_United_States_redistricting" target="_blank" rel="noopener">Wikipedia — 2025–2026 redistricting</a></li>
+    <li>Dave's Redistricting App, PlanScore, The Downballot (district lean under new lines)</li>
+  </ul>
+
+  <p>Full source bibliography with inline citations: <code>sources/{house,senate,historical,maps}/INDEX.md</code></p>
+</section>
+
+<!-- CAVEATS -->
+<section id="caveats">
+  <h2>8 — Caveats</h2>
+  <ul>
+    <li><b>This is May, not November.</b> 162 days is a long time. The model is honest about that — σ<sub>nat</sub> = 4 pp produces 80% intervals on the House of roughly ±20 seats. Anyone telling you they know who wins the House in May 2026 is selling something.</li>
+    <li><b>The ratings are not independent.</b> Cook, Sabato, and Inside Elections look at similar evidence. Averaging them reduces idiosyncratic shop bias but does not produce a fully-independent ensemble.</li>
+    <li><b>Florida and Tennessee maps are weeks old.</b> The May 4 and May 7 mid-decade redraws will continue to shake out ratings into the summer. Florida-9, Florida-14, and TN-09 in particular may move further as candidate fields settle.</li>
+    <li><b>The Texas Senate race depends on the May 26 runoff.</b> If Paxton beats Cornyn, the model's R+3 expected margin (which assumes some Paxton-candidate-quality drag) is roughly right. If Cornyn survives, the seat reverts to Likely R / Solid R.</li>
+    <li><b>Alaska and Maine use RCV.</b> The model treats both as single-round head-to-heads with wider sigma. Round-by-round elimination dynamics could flip either race by 5+ points relative to the first-choice numbers.</li>
+    <li><b>Nebraska's Osborn is an independent.</b> The model assumes he caucuses Democratic if elected. He has not committed to either side.</li>
+    <li><b>Vacancies are treated as held by the prior party.</b> CA-01 (LaMalfa, R, deceased) is a near-certain D pickup under Prop 50 redraw; TX-23 vacancy is a near-certain R hold.</li>
+  </ul>
+
+  <p>Issues, corrections, audits: open a PR. The whole model is ~600 lines of Node + this page.</p>
+</section>
+
+</main>
+
+<footer style="max-width:1100px;margin:40px auto 60px;padding:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;font-family:var(--mono)">
+  <div>Built 2026-05-25. Source: <a href="https://github.com/" target="_blank" rel="noopener">github repository</a>. License: MIT.</div>
+  <div style="margin-top:6px">No campaign, candidate, or party affiliation. Forecast reflects publicly-available information only.</div>
+</footer>
+
+<script src="assets/app.js"></script>
+
+</body>
+</html>
