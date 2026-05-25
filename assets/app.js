@@ -30,7 +30,7 @@ const C = {
   mauve:    '#8839ef',
 };
 
-const res = await fetch('assets/results.json?v=8').then(r => r.json());
+const res = await fetch('assets/results.json?v=9').then(r => r.json());
 const summary = res.summary;
 const meta = res.meta;
 
@@ -147,8 +147,8 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
   });
 
   // Wrap the canvas in a positioned container; build the HTML overlay (chip +
-  // R/D labels) inside that container so the labels sit ONLY over the plot
-  // area, not the title or caption above it.
+  // line) inside that container so the elements sit ONLY over the plot area,
+  // not the title or caption above it.
   if (!canvas.parentElement.classList.contains('canvas-pos')){
     const posWrap = document.createElement('div');
     posWrap.className = 'canvas-pos';
@@ -159,14 +159,23 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
   const overlay = document.createElement('div');
   overlay.className = 'maj-overlay';
   overlay.dataset.canvasId = canvasId;
-  // The threshold "line" is now an HTML element (.maj-line) instead of a
-  // canvas stroke.  The chip sits above it.  Bar coloring makes the
-  // party-control split obvious without explicit R/D labels.
+  // The threshold "line" is an HTML element (.maj-line) instead of a canvas
+  // stroke.  The chip sits above it.  Bar coloring makes the party-control
+  // split obvious without explicit R/D labels.
   overlay.innerHTML = `
     <div class="maj-line"></div>
     <div class="maj-chip">${threshold} for majority</div>
   `;
   posWrap.appendChild(overlay);
+
+  // chart.chartArea on the very first paint can be stale (canvas dimensions
+  // not yet finalized on mobile after responsive layout).  Schedule a few
+  // resize-and-redraw passes — one next-frame, one after a longer delay —
+  // so the plugin re-fires with settled chartArea values regardless of
+  // when the layout finally settles.  Chart.js's built-in `responsive: true`
+  // already handles window resize on its own.
+  requestAnimationFrame(() => { chart.resize(); });
+  setTimeout(() => { chart.resize(); }, 150);
 }
 
 // (positionMajorityOverlay removed — logic now lives inline in the plugin's
