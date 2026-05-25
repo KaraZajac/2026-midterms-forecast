@@ -30,7 +30,7 @@ const C = {
   mauve:    '#8839ef',
 };
 
-const res = await fetch('assets/results.json?v=9').then(r => r.json());
+const res = await fetch('assets/results.json?v=10').then(r => r.json());
 const summary = res.summary;
 const meta = res.meta;
 
