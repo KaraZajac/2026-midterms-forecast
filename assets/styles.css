@@ -315,6 +315,25 @@ pre{
 }
 .maj-overlay .maj-side b{font-weight:800;letter-spacing:.02em}
 
+/* R MAJORITY / D MAJORITY labels at the bottom-inside of each chart.
+   Positioned in the bottom corners of the plot area so they sit over the
+   bars themselves — the user instantly sees which side is which party. */
+.maj-overlay .maj-r-label,
+.maj-overlay .maj-d-label{
+  position:absolute;
+  bottom:calc(100% - var(--plot-bottom, 90%) + 8px);
+  color:#fff;
+  font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.06em;
+  padding:4px 8px;border-radius:3px;white-space:nowrap;
+  box-shadow:0 1px 3px rgba(0,0,0,.3);
+}
+.maj-overlay .maj-r-label{
+  left:calc(var(--plot-left, 8%) + 8px);
+}
+.maj-overlay .maj-d-label{
+  right:calc(100% - var(--plot-right, 92%) + 8px);
+}
+
 /* senate cartogram */
 .carto-scroller{
   width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;

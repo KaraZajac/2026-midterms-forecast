@@ -30,7 +30,7 @@ const C = {
   mauve:    '#8839ef',
 };
 
-const res = await fetch('assets/results.json?v=10').then(r => r.json());
+const res = await fetch('assets/results.json?v=11').then(r => r.json());
 const summary = res.summary;
 const meta = res.meta;
 
@@ -165,6 +165,8 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
   overlay.innerHTML = `
     <div class="maj-line"></div>
     <div class="maj-chip">${threshold} for majority</div>
+    <div class="maj-r-label" style="background:${rColor}">◀ R MAJORITY</div>
+    <div class="maj-d-label" style="background:${dColor}">D MAJORITY ▶</div>
   `;
   posWrap.appendChild(overlay);
 
