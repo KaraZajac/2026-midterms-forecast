@@ -189,11 +189,12 @@ distChart('chart-house', houseDist, 218, C.d, C.r, 170, 260, summary.house.p_d_w
 document.getElementById('dist-h-median').textContent = summary.house.d_seats_median;
 document.getElementById('dist-h-mean').textContent = summary.house.d_seats_mean.toFixed(1);
 
-// Senate distribution — center on 51.  Use a wider x-range so the 51-chip
-// has room on mobile (the threshold sits in the right half of 42-58 and the
-// chip was clipping at narrow viewports).
+// Senate distribution.  Line is drawn at 50 (the visual majority line —
+// strictly more seats than R) per user request.  Note: actual D control
+// requires 51 because the R vice president breaks 50-50 ties; that's
+// reflected in the model's P(D wins) calculation and in the caption.
 const senateDist = res.distributions.senate_d_seats;
-distChart('chart-senate', senateDist, 51, C.d, C.r, 40, 60, summary.senate.p_d_wins);
+distChart('chart-senate', senateDist, 50, C.d, C.r, 40, 60, summary.senate.p_d_wins);
 document.getElementById('dist-s-median').textContent = summary.senate.d_seats_median;
 document.getElementById('dist-s-mean').textContent = summary.senate.d_seats_mean.toFixed(1);
 
