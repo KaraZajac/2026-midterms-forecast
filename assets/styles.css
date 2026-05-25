@@ -267,6 +267,19 @@ pre{
   position:absolute;left:0;right:0;top:0;height:100%;
   pointer-events:none;font-family:var(--mono);
 }
+/* The vertical line itself — rendered as an HTML element so it stays
+   pixel-perfect at any device-pixel-ratio.  Anchored from just under the
+   chip down to the x-axis tick area (via --plot-bottom from the plugin). */
+.maj-overlay .maj-line{
+  position:absolute;
+  left:calc(var(--maj-x, 50%) - 2px);
+  top:32px;
+  bottom:calc(100% - var(--plot-bottom, 100%) - 0px);
+  width:4px;
+  background:#000;
+  border-radius:1px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.5);
+}
 .maj-overlay .maj-chip{
   position:absolute;
   left:calc(var(--maj-x, 50%));

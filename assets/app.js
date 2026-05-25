@@ -30,7 +30,7 @@ const C = {
   mauve:    '#8839ef',
 };
 
-const res = await fetch('assets/results.json?v=4').then(r => r.json());
+const res = await fetch('assets/results.json?v=5').then(r => r.json());
 const summary = res.summary;
 const meta = res.meta;
 
@@ -117,20 +117,13 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
     plugins: [{
       id: 'majorityLine',
       afterDraw(chart){
-        // Single bold black line.  The chip at the top tells you what it is.
+        // No canvas drawing — the line is an HTML element in the overlay,
+        // positioned via the CSS variables we update below.  This is more
+        // reliable across DPR / mobile rendering than a canvas stroke.
         const xScale = chart.scales.x;
         const yScale = chart.scales.y;
         const xPos = xScale.getPixelForValue(threshold);
-        const cx = chart.ctx;
-        cx.save();
-        cx.strokeStyle = '#000';
-        cx.lineWidth = 5;
-        cx.beginPath();
-        cx.moveTo(xPos, yScale.top - 4);
-        cx.lineTo(xPos, yScale.bottom);
-        cx.stroke();
-        cx.restore();
-        positionMajorityOverlay(canvasId, xPos, xScale.left, xScale.right);
+        positionMajorityOverlay(canvasId, xPos, xScale.left, xScale.right, yScale.top, yScale.bottom);
       }
     }]
   });
@@ -148,25 +141,30 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
   const overlay = document.createElement('div');
   overlay.className = 'maj-overlay';
   overlay.dataset.canvasId = canvasId;
-  // Single chip on the black line.  The line and the red/blue bar coloring
-  // make party majority obvious without extra labels.
-  overlay.innerHTML = `<div class="maj-chip">${threshold} for majority</div>`;
+  // The threshold "line" is now an HTML element (.maj-line) instead of a
+  // canvas stroke.  The chip sits above it.  Bar coloring makes the
+  // party-control split obvious without explicit R/D labels.
+  overlay.innerHTML = `
+    <div class="maj-line"></div>
+    <div class="maj-chip">${threshold} for majority</div>
+  `;
   posWrap.appendChild(overlay);
 }
 
-// The plugin tells us the pixel-x of the threshold line in canvas-internal
-// coords.  Translate to CSS coords by ratioing against canvas internal width.
-function positionMajorityOverlay(canvasId, xPx, plotLeft, plotRight){
+// The plugin tells us the pixel-x of the threshold and the plot top/bottom
+// in canvas-internal coords.  Translate to CSS coords by ratioing against
+// canvas internal vs. client size.
+function positionMajorityOverlay(canvasId, xPx, plotLeft, plotRight, plotTop, plotBottom){
   const canvas = document.getElementById(canvasId);
   const overlay = canvas.parentElement.querySelector(`.maj-overlay[data-canvas-id="${canvasId}"]`);
   if (!overlay) return;
-  const dpr = canvas.width / canvas.clientWidth;
-  const xCss = xPx / dpr;
-  const leftCss = plotLeft / dpr;
-  const rightCss = plotRight / dpr;
-  overlay.style.setProperty('--maj-x', xCss + 'px');
-  overlay.style.setProperty('--plot-left', leftCss + 'px');
-  overlay.style.setProperty('--plot-right', rightCss + 'px');
+  const dprX = canvas.width / canvas.clientWidth;
+  const dprY = canvas.height / canvas.clientHeight;
+  overlay.style.setProperty('--maj-x', (xPx / dprX) + 'px');
+  overlay.style.setProperty('--plot-left', (plotLeft / dprX) + 'px');
+  overlay.style.setProperty('--plot-right', (plotRight / dprX) + 'px');
+  if (plotTop != null)    overlay.style.setProperty('--plot-top', (plotTop / dprY) + 'px');
+  if (plotBottom != null) overlay.style.setProperty('--plot-bottom', (plotBottom / dprY) + 'px');
 }
 
 // House distribution — center on 218
