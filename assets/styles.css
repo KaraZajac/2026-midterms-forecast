@@ -291,20 +291,7 @@ pre{
 .maj-overlay .maj-r{text-align:right}
 .maj-overlay .maj-d{text-align:left}
 
-/* On mobile, anchor the R/D labels to chart edges instead of stacking
-   against the line, so they don't get clipped by narrow viewports. */
-@media (max-width: 600px){
-  .maj-overlay .maj-chip{font-size:10px;padding:4px 7px}
-  .maj-overlay .maj-side{
-    font-size:10px;padding:3px 6px;letter-spacing:.04em;top:38px;
-  }
-  .maj-overlay .maj-r{
-    right:auto;left:8px;
-  }
-  .maj-overlay .maj-d{
-    left:auto;right:8px;
-  }
-}
+/* Default (desktop): R/D labels anchored next to the line */
 .maj-overlay .maj-r{
   right:calc(100% - var(--maj-x, 50%) + 14px);
 }
@@ -326,16 +313,89 @@ pre{
   z-index:2;
 }
 
+/* =============================================================================
+   Responsive — tablet (820px) and mobile (600px, 420px)
+   ============================================================================= */
+
 @media (max-width: 820px){
   .verdict{grid-template-columns:repeat(2,1fr)}
   .grid-2{grid-template-columns:1fr}
-  .sim{grid-template-columns:1fr}
-  .sim .out .stat-row{grid-template-columns:repeat(2,1fr)}
   header.site h1{font-size:24px}
+  header.site .meta{gap:10px;font-size:11px}
+  nav.toc{gap:10px;font-size:11px;padding:10px 16px}
+  main{padding:20px 14px 60px}
+  section{margin:0 0 36px}
   table{font-size:12px}
   th,td{padding:6px}
-  #consequence-map{height:360px}
+  .chart-wrap{padding:12px}
+  .chart-wrap canvas{height:280px !important}
 }
+
+@media (max-width: 600px){
+  /* Tighter typography + spacing */
+  header.site{padding:24px 14px 10px}
+  header.site h1{font-size:20px;letter-spacing:0}
+  header.site .sub{font-size:13px}
+  section h2{font-size:11px}
+  section h3{font-size:15px}
+  section p{font-size:14px}
+  .classification{font-size:10px;letter-spacing:.10em;padding:5px 10px}
+
+  /* Verdict — bigger numbers, single column at very small */
+  .verdict .box{padding:11px}
+  .verdict .box .v{font-size:22px}
+  .verdict .box .vsm{font-size:12px}
+
+  /* Pre/code blocks — must scroll, not blow out the layout */
+  pre{font-size:11px;padding:10px;white-space:pre;overflow-x:auto}
+  code{font-size:.88em;word-break:break-word}
+
+  /* Majority-line chip & labels — anchor to chart edges, shrink.  Drop the
+     desktop max-width since on mobile the labels sit on opposite sides and
+     don't risk overlapping each other. */
+  .maj-overlay .maj-chip{font-size:10px;padding:4px 7px}
+  .maj-overlay .maj-side{
+    font-size:10px;padding:3px 6px;letter-spacing:.04em;top:36px;
+    max-width:none;overflow:visible;text-overflow:clip;
+  }
+  .maj-overlay .maj-r{
+    right:auto;left:6px;
+  }
+  .maj-overlay .maj-d{
+    left:auto;right:6px;
+  }
+
+  /* Senate cartogram — let it scroll horizontally on phones rather than
+     squashing tiles to unreadable size. */
+  #senate-cartogram-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  #senate-cartogram{min-width:520px;margin:12px 0 !important}
+  #senate-cartogram > div{padding:6px 3px;font-size:11px}
+  #senate-cartogram > div > div:first-child{font-size:11px}
+  #senate-cartogram > div > div:nth-child(2){font-size:9px}
+
+  /* Race tables — hide low-priority columns on phones.
+     Senate columns: 1 State, 2 Incumbent, 3 Rating, 4 Margin, 5 Model P(D), 6 Δ, 7 Notes
+     House columns:  1 District, 2 Incumbent, 3 Rating, 4 Margin, 5 Model P(D), 6 Notes
+     Tipping columns: 1 Rank, 2 District, 3 Rating, 4 P(decisive)
+     Hide: senate cols 4+6+7, house cols 4+6.  Keep: District, Inc party, Rating, Model P(D). */
+  #senate-table th:nth-child(4),  #senate-table td:nth-child(4),
+  #senate-table th:nth-child(6),  #senate-table td:nth-child(6),
+  #senate-table th:nth-child(7),  #senate-table td:nth-child(7),
+  #house-table th:nth-child(4),   #house-table td:nth-child(4),
+  #house-table th:nth-child(6),   #house-table td:nth-child(6){
+    display:none;
+  }
+  #senate-table th,#house-table th,#tipping-table th{font-size:9px;padding:5px 4px}
+  #senate-table td,#house-table td,#tipping-table td{padding:5px 4px;font-size:12px}
+
+  /* Footer */
+  footer{padding:16px;font-size:11px}
+}
+
 @media (max-width: 420px){
   .verdict{grid-template-columns:1fr}
+  /* On very narrow phones, charts get even shorter to keep the page navigable */
+  .chart-wrap canvas{height:240px !important}
+  .chart-wrap h4{font-size:13px}
+  .chart-wrap .cap{font-size:11px}
 }
