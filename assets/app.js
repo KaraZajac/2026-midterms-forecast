@@ -1,101 +1,82 @@
 // =============================================================================
-// 2026 Midterms — page rendering
+// 2026 Midterms — page renderer (vanilla JS, Chart.js + annotation plugin)
 // =============================================================================
-//
-// Loads assets/results.json (the Monte Carlo output) and renders:
-//   - topline verdict boxes
-//   - seat-count histograms (Chart.js)
-//   - national-swing histogram
-//   - senate cartogram (CSS grid of state tiles)
-//   - senate + house race tables
-//   - tipping-point table
-//
-// The page is otherwise static.
 
 (async function(){
 
-const css = getComputedStyle(document.documentElement);
 const C = {
-  d:        '#1e66f5',   // ctp-blue
-  r:        '#d20f39',   // ctp-red
-  d_light:  '#7287fd',   // ctp-lavender
-  r_light:  '#e64553',   // ctp-maroon
-  ink:      '#4c4f69',
-  muted:    '#6c6f85',
+  d:        '#1e66f5',
+  r:        '#d20f39',
+  ink:      '#1c1f2a',
+  muted:    '#5c5f77',
   line:     '#ccd0da',
-  surface:  '#e6e9ef',
-  accent:   '#fe640b',
-  yellow:   '#df8e1d',
-  green:    '#40a02b',
-  mauve:    '#8839ef',
+  panel:    '#ffffff',
 };
 
-const res = await fetch('assets/results.json?v=12').then(r => r.json());
+// Tell Chart.js's plugin loader to use the annotation plugin.
+if (window.Chart && window.ChartAnnotation){
+  Chart.register(window.ChartAnnotation);
+} else if (window.Chart && window['chartjs-plugin-annotation']){
+  Chart.register(window['chartjs-plugin-annotation']);
+}
+
+const res = await fetch('assets/results.json?v=20').then(r => r.json());
 const summary = res.summary;
 const meta = res.meta;
 
-// =============================================================================
-// Header / meta
-// =============================================================================
-document.getElementById('m-asof').textContent = meta.as_of;
-document.getElementById('m-approval').textContent = meta.trump_approval_pct;
-document.getElementById('m-genballot').textContent = meta.generic_ballot_d_pct;
-document.getElementById('m-ntrials').textContent = meta.n_trials.toLocaleString();
+function pct0(p){ return Math.round(p*100) + '%' }
+function pct1(p){ return (p*100).toFixed(1) + '%' }
+function set(id, val){ const el = document.getElementById(id); if (el) el.textContent = val; }
 
 // =============================================================================
-// Topline verdict
+// Header
 // =============================================================================
-function pct(p){ return (p * 100).toFixed(0) + '%'; }
-function pct1(p){ return (p * 100).toFixed(1) + '%'; }
-function signPP(x){ const s = x>=0?'+':''; return s + x.toFixed(1); }
-
-document.getElementById('t-pdh').textContent = pct(summary.house.p_d_wins);
-document.getElementById('t-dh-median').textContent = summary.house.d_seats_median;
-document.getElementById('t-dh-p10').textContent = summary.house.d_seats_p10;
-document.getElementById('t-dh-p90').textContent = summary.house.d_seats_p90;
-
-document.getElementById('t-pds').textContent = pct(summary.senate.p_d_wins);
-document.getElementById('t-ds-median').textContent = summary.senate.d_seats_median;
-document.getElementById('t-ds-p10').textContent = summary.senate.d_seats_p10;
-document.getElementById('t-ds-p90').textContent = summary.senate.d_seats_p90;
-
-document.getElementById('t-pdt').textContent = pct(summary.joint.p_d_trifecta);
-document.getElementById('t-prt').textContent = pct(summary.joint.p_r_trifecta);
-
-// Topline narrative
-const narrative = (function(){
-  const ph = summary.house.p_d_wins;
-  const ps = summary.senate.p_d_wins;
-  const hWord = ph > 0.6 ? 'leans Democratic' : ph > 0.45 ? 'is a coin flip' : ph > 0.3 ? 'leans Republican' : 'favors Republicans';
-  const sWord = ps > 0.6 ? 'leans Democratic' : ps > 0.45 ? 'is a coin flip' : ps > 0.3 ? 'leans Republican' : 'favors Republicans';
-  const split = summary.joint.p_d_house_only;
-  return `As of ${meta.as_of}, the House ${hWord} (${pct1(ph)}) and the Senate ${sWord} (${pct1(ps)}). ` +
-         `The single most likely joint outcome is ${
-           Math.max(summary.joint.p_d_trifecta, summary.joint.p_r_trifecta, summary.joint.p_d_house_only, summary.joint.p_d_senate_only) === summary.joint.p_d_trifecta ? 'a Democratic trifecta' :
-           Math.max(summary.joint.p_d_trifecta, summary.joint.p_r_trifecta, summary.joint.p_d_house_only, summary.joint.p_d_senate_only) === summary.joint.p_r_trifecta ? 'Republicans holding both chambers' :
-           Math.max(summary.joint.p_d_trifecta, summary.joint.p_r_trifecta, summary.joint.p_d_house_only, summary.joint.p_d_senate_only) === summary.joint.p_d_house_only ? 'D-House / R-Senate split' :
-           'R-House / D-Senate split'
-         } at ${pct(Math.max(summary.joint.p_d_trifecta, summary.joint.p_r_trifecta, summary.joint.p_d_house_only, summary.joint.p_d_senate_only))}. ` +
-         `A split chamber outcome (D House only) has probability ${pct(split)}. ` +
-         `Republicans entered this cycle holding 220 House seats and 53 Senate seats; Democrats need a net +3 in the House and +4 in the Senate to flip both.`;
-})();
-document.getElementById('topline-narrative').textContent = narrative;
+set('meta-days', meta.days_until);
 
 // =============================================================================
-// Histograms — Chart.js
+// Topline — house + senate
 // =============================================================================
-Chart.defaults.color = C.muted;
-Chart.defaults.font.family = 'ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, monospace';
-Chart.defaults.font.size = 11;
+function paintChamber(chamberName, summaryObj, controlThreshold){
+  const pD = summaryObj.p_d_wins;
+  const pR = 1 - pD;
+  set(`${chamberName}-d-prob`, pct0(pD));
+  set(`${chamberName}-r-prob`, pct0(pR));
+  set(`${chamberName}-median`, summaryObj.d_seats_median);
+  set(`${chamberName}-range`, `${summaryObj.d_seats_p10}–${summaryObj.d_seats_p90} D seats`);
 
-function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins){
-  const canvas = document.getElementById(canvasId);
+  // Probability bar: blue from the right
+  const winbarD = document.querySelector(`#${chamberName}-winbar .winbar-d`);
+  if (winbarD) winbarD.style.width = (pD * 100) + '%';
+
+  // Mark favored side
+  const dSide = document.getElementById(`${chamberName}-d`);
+  const rSide = document.getElementById(`${chamberName}-r`);
+  if (pD >= 0.5){ dSide.classList.add('favored'); }
+  else          { rSide.classList.add('favored'); }
+}
+
+paintChamber('house',  summary.house,  218);
+paintChamber('senate', summary.senate, 51);
+
+// =============================================================================
+// Distribution charts — Chart.js + annotation plugin for the threshold line
+// =============================================================================
+function distributionChart(canvasId, data, threshold, thresholdLabel, xMin, xMax){
   const labels = data.map(d => d.x);
   const values = data.map(d => d.y);
-  const bgs = labels.map(x => x >= threshold ? dColor : rColor);
-  const chart = new Chart(canvas, {
+  // For senate: line at 50 means "bars where seat count is strictly greater
+  // than 50 are blue".  threshold == 50, so x > threshold → blue.
+  const colors = labels.map(x => x > threshold ? C.d : C.r);
+
+  new Chart(document.getElementById(canvasId), {
     type: 'bar',
-    data: { labels, datasets: [{ data: values, backgroundColor: bgs, borderWidth: 0, barPercentage: 1.02, categoryPercentage: 1.0 }] },
+    data: { labels, datasets: [{
+      data: values,
+      backgroundColor: colors,
+      borderWidth: 0,
+      barPercentage: 1.02,
+      categoryPercentage: 1.0,
+    }]},
     options: {
       responsive: true,
       maintainAspectRatio: false,
@@ -104,305 +85,135 @@ function distChart(canvasId, data, threshold, dColor, rColor, xMin, xMax, pDwins
         legend: { display: false },
         tooltip: {
           callbacks: {
-            title: (items) => items[0].label + ' seats',
-            label: (item) => (item.raw * 100).toFixed(2) + '% of trials',
+            title: items => items[0].label + ' D seats',
+            label: item => (item.raw * 100).toFixed(2) + '% of trials',
+          }
+        },
+        annotation: {
+          annotations: {
+            majority: {
+              type: 'line',
+              xMin: threshold,
+              xMax: threshold,
+              borderColor: '#000',
+              borderWidth: 4,
+              borderDash: [],
+              label: {
+                display: true,
+                content: thresholdLabel,
+                position: 'start',
+                backgroundColor: '#000',
+                color: '#fff',
+                font: { family: "ui-monospace, monospace", size: 11, weight: 'bold' },
+                padding: { top: 5, bottom: 5, left: 8, right: 8 },
+                borderRadius: 4,
+                yAdjust: -4,
+              },
+              z: 100,
+            }
           }
         },
       },
       scales: {
-        x: { min: xMin, max: xMax, ticks: { maxTicksLimit: 12, autoSkip: true }, grid: { color: C.line, display: false } },
-        y: { ticks: { callback: v => (v*100).toFixed(1)+'%' }, grid: { color: C.line }, beginAtZero: true },
+        x: {
+          type: 'linear',
+          min: xMin, max: xMax,
+          ticks: { maxTicksLimit: 9, color: C.muted, font: { family: 'ui-monospace, monospace', size: 11 }},
+          grid: { display: false },
+          border: { color: C.line },
+        },
+        y: {
+          ticks: { callback: v => (v*100).toFixed(1)+'%', color: C.muted, font: { family: 'ui-monospace, monospace', size: 10 }},
+          grid: { color: C.line },
+          border: { display: false },
+          beginAtZero: true,
+        },
       },
     },
-    plugins: [{
-      id: 'majorityLine',
-      afterDraw(chart){
-        // Position the line entirely from chart.chartArea (CSS-px plot
-        // bounds) and the known threshold value.  Avoiding xScale here
-        // because its coordinate space appears to switch between CSS px
-        // and backing-store px between Chart.js's first draw and a
-        // touch-triggered redraw on mobile, which caused the line to
-        // drift right after touch.
-        const ca = chart.chartArea;
-        if (!ca || ca.right <= ca.left) return;
-        const rect = chart.canvas.getBoundingClientRect();
-        if (!rect.width) return;
-        // Where the threshold value sits in the configured value range.
-        const fracInRange = (threshold - xMin) / (xMax - xMin);
-        // Plot-area edges as fractions of canvas CSS width.
-        const plotLeftFrac  = ca.left  / rect.width;
-        const plotRightFrac = ca.right / rect.width;
-        // Final line position as a fraction of canvas CSS width.
-        const xFrac = plotLeftFrac + fracInRange * (plotRightFrac - plotLeftFrac);
-
-        const overlay = chart.canvas.parentElement.querySelector(`.maj-overlay[data-canvas-id="${canvasId}"]`);
-        if (!overlay) return;
-        overlay.style.setProperty('--maj-x',       (xFrac * 100) + '%');
-        overlay.style.setProperty('--plot-left',   (plotLeftFrac  * 100) + '%');
-        overlay.style.setProperty('--plot-right',  (plotRightFrac * 100) + '%');
-        overlay.style.setProperty('--plot-top',    (ca.top    / rect.height * 100) + '%');
-        overlay.style.setProperty('--plot-bottom', (ca.bottom / rect.height * 100) + '%');
-      }
-    }]
   });
-
-  // Wrap the canvas in a positioned container; build the HTML overlay (chip +
-  // line) inside that container so the elements sit ONLY over the plot area,
-  // not the title or caption above it.
-  if (!canvas.parentElement.classList.contains('canvas-pos')){
-    const posWrap = document.createElement('div');
-    posWrap.className = 'canvas-pos';
-    canvas.parentNode.insertBefore(posWrap, canvas);
-    posWrap.appendChild(canvas);
-  }
-  const posWrap = canvas.parentElement;
-  const overlay = document.createElement('div');
-  overlay.className = 'maj-overlay';
-  overlay.dataset.canvasId = canvasId;
-  // The threshold "line" is an HTML element (.maj-line) instead of a canvas
-  // stroke.  The chip sits above it.  Bar coloring makes the party-control
-  // split obvious without explicit R/D labels.
-  overlay.innerHTML = `
-    <div class="maj-line"></div>
-    <div class="maj-chip">${threshold} for majority</div>
-  `;
-  posWrap.appendChild(overlay);
-
-  // chart.chartArea on the very first paint can be stale (canvas dimensions
-  // not yet finalized on mobile after responsive layout).  Schedule a few
-  // resize-and-redraw passes — one next-frame, one after a longer delay —
-  // so the plugin re-fires with settled chartArea values regardless of
-  // when the layout finally settles.  Chart.js's built-in `responsive: true`
-  // already handles window resize on its own.
-  requestAnimationFrame(() => { chart.resize(); });
-  setTimeout(() => { chart.resize(); }, 150);
 }
 
-// (positionMajorityOverlay removed — logic now lives inline in the plugin's
-// afterDraw, using chart.chartArea + chart.canvas.getBoundingClientRect
-// which are both in CSS pixels and so don't depend on canvas backing-store
-// resize timing.)
-
-// House distribution — center on 218
-const houseDist = res.distributions.house_d_seats;
-distChart('chart-house', houseDist, 218, C.d, C.r, 170, 260, summary.house.p_d_wins);
-document.getElementById('dist-h-median').textContent = summary.house.d_seats_median;
-document.getElementById('dist-h-mean').textContent = summary.house.d_seats_mean.toFixed(1);
-
-// Senate distribution.  Line is drawn at 50 (the visual majority line —
-// strictly more seats than R) per user request.  Note: actual D control
-// requires 51 because the R vice president breaks 50-50 ties; that's
-// reflected in the model's P(D wins) calculation and in the caption.
-const senateDist = res.distributions.senate_d_seats;
-distChart('chart-senate', senateDist, 50, C.d, C.r, 40, 60, summary.senate.p_d_wins);
-document.getElementById('dist-s-median').textContent = summary.senate.d_seats_median;
-document.getElementById('dist-s-mean').textContent = summary.senate.d_seats_mean.toFixed(1);
-
-// National swing distribution
-const natSwingDist = res.distributions.national_swing;
-const swingCtx = document.getElementById('chart-natswing');
-new Chart(swingCtx, {
-  type: 'bar',
-  data: {
-    labels: natSwingDist.map(d => d.x.toFixed(1)),
-    datasets: [{
-      data: natSwingDist.map(d => d.y),
-      backgroundColor: natSwingDist.map(d => d.x >= 0 ? C.d_light : C.r_light),
-      borderWidth: 0,
-      barPercentage: 1.02,
-      categoryPercentage: 1.0,
-    }],
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false, animation: false,
-    plugins: { legend: { display: false }, tooltip: {
-      callbacks: {
-        title: (items) => `D${items[0].label >= 0 ? '+' : ''}${items[0].label} pp`,
-        label: (item) => (item.raw * 100).toFixed(2) + '% of trials',
-      }
-    }},
-    scales: {
-      x: { ticks: { maxTicksLimit: 11, autoSkip: true }, grid: { display: false } },
-      y: { ticks: { callback: v => (v*100).toFixed(1)+'%' }, grid: { color: C.line }, beginAtZero: true },
-    },
-  },
-});
-document.getElementById('nat-mu').textContent = meta.nat_swing_mean_pp.toFixed(1);
-document.getElementById('nat-sigma').textContent = meta.nat_swing_sigma_pp.toFixed(1);
+// xMin/xMax wide enough that the threshold label has room and the distribution
+// tails don't get cut off
+distributionChart('house-chart',  res.distributions.house_d_seats,  218, '218 needed for majority', 170, 260);
+distributionChart('senate-chart', res.distributions.senate_d_seats, 50,  '50 = tie · 51 for D control', 40, 60);
 
 // =============================================================================
-// Senate cartogram — CSS grid layout of state tiles for the 35 races
+// Joint outcomes
 // =============================================================================
-// (col, row) hex-style positions for every state up in 2026.
-const CARTO_POS = {
-  'ME': [10, 0], 'NH': [9, 1], 'MA': [10, 2], 'RI': [11, 2], 'NJ': [9, 3], 'DE': [9, 4],
-  'VA': [8, 5], 'NC': [8, 6], 'SC': [8, 7], 'GA': [7, 7],
-  'AL': [6, 7], 'TN': [6, 6], 'KY': [6, 5], 'OH': [7, 4], 'MI': [7, 3],
-  'MN': [5, 2], 'IL': [5, 4], 'IA': [4, 4], 'MO': [4, 5], 'AR': [4, 6], 'LA': [4, 7], 'MS': [5, 7],
-  'KS': [3, 5], 'OK': [3, 6], 'TX': [3, 7],
-  'NE': [3, 4], 'SD': [3, 3], 'ND': [3, 2],
-  'CO': [2, 5], 'NM': [2, 6], 'WY': [2, 4], 'MT': [2, 3], 'ID': [1, 3], 'UT': [1, 5], 'AZ': [1, 6],
-  'NV': [1, 4], 'CA': [0, 5], 'OR': [0, 3], 'WA': [0, 2], 'AK': [0, 7], 'HI': [0, 8],
-};
+set('joint-rr', pct0(summary.joint.p_r_trifecta));
+set('joint-rd', pct0(summary.joint.p_d_senate_only));
+set('joint-dr', pct0(summary.joint.p_d_house_only));
+set('joint-dd', pct0(summary.joint.p_d_trifecta));
 
-const senateByState = {};
-res.races.senate.forEach(r => {
-  const state = r.id.split('-')[0];
-  // OH-SEN-SP and FL-SEN-SP share state code with regular seat (FL is only on
-  // ballot via special; OH same).  Keep both indexed by suffix.
-  const isSpecial = r.id.includes('SP');
-  const key = isSpecial ? state + '-SP' : state;
-  senateByState[key] = r;
-});
+// =============================================================================
+// Race lists
+// =============================================================================
+function ratingShort(label){
+  return label
+    .replace(/Solid /,'').replace(/Safe /,'Safe ')
+    .replace(/Likely /,'Lk ')
+    .replace(/Lean /,'Ln ')
+    .replace(/Tilt /,'Tt ')
+    .replace(/Toss-up/, 'Toss')
+    || label;
+}
 
 function probColor(p){
-  // 0 = red, 0.5 = grey, 1 = blue.  Use HSL-like interp between red and blue.
-  const dStrength = Math.abs(p - 0.5) * 2;  // 0..1
+  // 0 = solid red, 0.5 = grey, 1 = solid blue
+  const t = Math.abs(p - 0.5) * 2;     // distance from 50/50, 0..1
   if (p >= 0.5){
-    // Mix from neutral to D blue
-    return mixColors('#bcc0cc', '#1e66f5', dStrength);
+    return mix('#bcc0cc', C.d, t);
   } else {
-    return mixColors('#bcc0cc', '#d20f39', dStrength);
+    return mix('#bcc0cc', C.r, t);
   }
 }
-function mixColors(c1, c2, t){
-  const a = parseInt(c1.slice(1),16), b = parseInt(c2.slice(1),16);
-  const ar = (a>>16)&0xff, ag = (a>>8)&0xff, ab = a&0xff;
-  const br = (b>>16)&0xff, bg = (b>>8)&0xff, bb = b&0xff;
-  const r = Math.round(ar + (br-ar)*t);
-  const g = Math.round(ag + (bg-ag)*t);
-  const bl = Math.round(ab + (bb-ab)*t);
-  return `rgb(${r},${g},${bl})`;
+function mix(a, b, t){
+  const ah = parseInt(a.slice(1),16), bh = parseInt(b.slice(1),16);
+  const ar=(ah>>16)&0xff, ag=(ah>>8)&0xff, ab=ah&0xff;
+  const br=(bh>>16)&0xff, bg=(bh>>8)&0xff, bb=bh&0xff;
+  return `rgb(${Math.round(ar+(br-ar)*t)},${Math.round(ag+(bg-ag)*t)},${Math.round(ab+(bb-ab)*t)})`;
 }
 
-// Wrap the cartogram in a scroller so on narrow viewports it can pan
-// horizontally instead of collapsing the tiles to unreadable size.
-const carto = document.getElementById('senate-cartogram');
-const cartoScroller = document.createElement('div');
-cartoScroller.className = 'carto-scroller';
-carto.parentNode.insertBefore(cartoScroller, carto);
-cartoScroller.appendChild(carto);
-
-carto.style.display = 'grid';
-carto.style.gridTemplateColumns = 'repeat(13, 1fr)';
-carto.style.gridTemplateRows = 'repeat(9, 1fr)';
-carto.style.gap = '4px';
-carto.style.width = '100%';
-carto.style.maxWidth = '760px';
-carto.style.margin = '12px auto';
-carto.style.aspectRatio = '13 / 9';
-
-// For each state up in 2026 (regular + specials), place a tile.
-const tilesAdded = [];
-Object.entries(senateByState).forEach(([key, r]) => {
-  const state = key.replace('-SP','');
-  const pos = CARTO_POS[state];
-  if (!pos) return;
-  const tile = document.createElement('div');
-  tile.style.gridColumn = pos[0] + 1;
-  tile.style.gridRow = pos[1] + 1;
-  // If both regular and special exist for same state, offset special slightly
-  if (key.endsWith('-SP') && senateByState[state]){
-    tile.style.gridColumn = pos[0] + 2;
-  }
-  tile.style.background = probColor(r.model_p_d_win);
-  tile.style.borderRadius = '6px';
-  tile.style.padding = '8px 4px';
-  tile.style.textAlign = 'center';
-  tile.style.color = (Math.abs(r.model_p_d_win - 0.5) > 0.25) ? '#fff' : '#222';
-  tile.style.fontFamily = 'ui-monospace, monospace';
-  tile.style.fontSize = '12px';
-  tile.style.cursor = 'help';
-  tile.style.position = 'relative';
-  tile.innerHTML = `<div style="font-weight:700">${state}${key.endsWith('-SP') ? '·SP' : ''}</div>` +
-                   `<div style="font-size:10px;opacity:.9">${pct(r.model_p_d_win)}</div>`;
-  tile.title = `${r.id} (${r.rating_consensus})\nIncumbent: ${r.incumbent_party}\nExpected D-R margin: ${signPP(r.expected_margin)} pp\nModel P(D wins): ${pct1(r.model_p_d_win)}\n${r.note}`;
-  carto.appendChild(tile);
-  tilesAdded.push(state);
-});
-
-// Add a small legend below the cartogram
-const legend = document.createElement('div');
-legend.style.cssText = 'display:flex;justify-content:center;gap:14px;font-family:ui-monospace, monospace;font-size:11px;color:var(--muted);margin-top:8px';
-legend.innerHTML = `
-  <span><span style="display:inline-block;width:14px;height:14px;background:#d20f39;border-radius:3px;vertical-align:middle"></span> &nbsp;Safe R</span>
-  <span><span style="display:inline-block;width:14px;height:14px;background:#e64553;border-radius:3px;vertical-align:middle"></span> &nbsp;Lean R</span>
-  <span><span style="display:inline-block;width:14px;height:14px;background:#bcc0cc;border-radius:3px;vertical-align:middle"></span> &nbsp;Toss-up</span>
-  <span><span style="display:inline-block;width:14px;height:14px;background:#7287fd;border-radius:3px;vertical-align:middle"></span> &nbsp;Lean D</span>
-  <span><span style="display:inline-block;width:14px;height:14px;background:#1e66f5;border-radius:3px;vertical-align:middle"></span> &nbsp;Safe D</span>
-`;
-carto.parentNode.appendChild(legend);
-
-// =============================================================================
-// Race tables
-// =============================================================================
-function ratingTag(r){
-  const cls = r.rating_consensus.toLowerCase().includes(' d') || r.rating_consensus === 'Solid D'
-    ? 'tag-d' : r.rating_consensus.toLowerCase().includes(' r') || r.rating_consensus === 'Solid R'
-    ? 'tag-r' : 'tag-toss';
-  return `<span class="${cls}">${r.rating_consensus}</span>`;
-}
-
-function deltaTag(model, rating){
-  const d = model - rating;
-  const sign = d > 0 ? '+' : '';
-  const cls = Math.abs(d) > 0.05 ? (d > 0 ? 'tag-d' : 'tag-r') : 'tag-toss';
-  return `<span class="${cls}">${sign}${(d*100).toFixed(1)}pp</span>`;
-}
-
-function probCellHTML(p){
-  const bgColor = probColor(p);
-  const txtColor = Math.abs(p - 0.5) > 0.25 ? '#fff' : '#222';
-  return `<span style="display:inline-block;padding:3px 8px;border-radius:3px;background:${bgColor};color:${txtColor};font-weight:700;font-family:ui-monospace,monospace;min-width:50px;text-align:center">${pct1(p)}</span>`;
-}
-
-// Senate table — sort by closeness to 0.5 (most competitive first)
-const senateSorted = [...res.races.senate].sort((a,b) => Math.abs(a.model_p_d_win - 0.5) - Math.abs(b.model_p_d_win - 0.5));
-const senateTbody = document.querySelector('#senate-table tbody');
-senateSorted.forEach(r => {
-  const tr = document.createElement('tr');
-  tr.innerHTML = `
-    <td><b>${r.id}</b></td>
-    <td>${r.incumbent_party === 'D' ? '<span class="tag-d">D</span>' : '<span class="tag-r">R</span>'}</td>
-    <td>${ratingTag(r)}</td>
-    <td class="num">${signPP(r.expected_margin)}</td>
-    <td>${probCellHTML(r.model_p_d_win)}</td>
-    <td>${deltaTag(r.model_p_d_win, r.rating_p_d_win)}</td>
-    <td style="font-size:12px;color:var(--muted)">${r.note}</td>
+function renderRace(r){
+  const led = r.model_p_d_win >= 0.5 ? 'd-led' : 'r-led';
+  return `
+    <div class="race-card ${led}">
+      <div class="race-id">${r.id}</div>
+      <div class="race-meta">
+        <div class="race-rating">${r.rating_consensus}${r.incumbent_party ? ' · '+r.incumbent_party+' held' : ''}</div>
+        ${r.note ? `<div class="race-note">${r.note}</div>` : ''}
+      </div>
+      <div class="race-prob" style="background:${probColor(r.model_p_d_win)}">${pct0(r.model_p_d_win)} D</div>
+    </div>
   `;
-  senateTbody.appendChild(tr);
-});
+}
 
-// House table — only competitive races, sorted by closeness
-const houseCompetitive = res.races.house.filter(r => Math.abs(r.model_p_d_win - 0.5) < 0.45 || (r.note && !r.note.startsWith('PVI')));
-const houseSorted = [...houseCompetitive].sort((a,b) => Math.abs(a.model_p_d_win - 0.5) - Math.abs(b.model_p_d_win - 0.5));
-const houseTbody = document.querySelector('#house-table tbody');
-houseSorted.forEach(r => {
-  const tr = document.createElement('tr');
-  tr.innerHTML = `
-    <td><b>${r.id}</b></td>
-    <td>${r.incumbent_party === 'D' ? '<span class="tag-d">D</span>' : r.incumbent_party === 'R' ? '<span class="tag-r">R</span>' : '<span class="tag-toss">—</span>'}</td>
-    <td>${ratingTag(r)}</td>
-    <td class="num">${signPP(r.expected_margin)}</td>
-    <td>${probCellHTML(r.model_p_d_win)}</td>
-    <td style="font-size:12px;color:var(--muted)">${r.note}</td>
-  `;
-  houseTbody.appendChild(tr);
-});
+// Senate — all 35, sorted by closeness to 50/50
+const senateSorted = [...res.races.senate].sort((a,b) =>
+  Math.abs(a.model_p_d_win - 0.5) - Math.abs(b.model_p_d_win - 0.5)
+);
+document.getElementById('senate-races').innerHTML = senateSorted.map(renderRace).join('');
+
+// House — only the competitive ones (hand-curated + any auto-derived with
+// non-trivial uncertainty)
+const houseShown = res.races.house.filter(r =>
+  Math.abs(r.model_p_d_win - 0.5) < 0.45 || !r.note?.startsWith('PVI')
+).sort((a,b) =>
+  Math.abs(a.model_p_d_win - 0.5) - Math.abs(b.model_p_d_win - 0.5)
+);
+document.getElementById('house-races').innerHTML = houseShown.map(renderRace).join('');
 
 // =============================================================================
-// Tipping-point table
+// Tipping point
 // =============================================================================
-const tipTbody = document.querySelector('#tipping-table tbody');
-res.tipping_point_house.forEach((r, i) => {
-  const tr = document.createElement('tr');
-  tr.innerHTML = `
-    <td class="num">${i+1}</td>
-    <td><b>${r.id}</b></td>
-    <td>${r.rating_consensus}</td>
-    <td class="num">${(r.p_decisive*100).toFixed(2)}%</td>
-  `;
-  tipTbody.appendChild(tr);
-});
+const tipHtml = res.tipping_point_house.slice(0, 20).map(t => `
+  <li>
+    <span class="tip-id">${t.id}</span>
+    <span class="tip-rating">${t.rating_consensus}</span>
+    <span class="tip-pct">${(t.p_decisive*100).toFixed(2)}%</span>
+  </li>
+`).join('');
+document.getElementById('tip-list').innerHTML = tipHtml;
 
 })();

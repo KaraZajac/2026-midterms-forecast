@@ -1,441 +1,307 @@
-/* Catppuccin Latte palette */
-:root{
-  --ctp-base:     #eff1f5;
-  --ctp-mantle:   #e6e9ef;
-  --ctp-crust:    #dce0e8;
-  --ctp-text:     #4c4f69;
-  --ctp-subtext1: #5c5f77;
-  --ctp-subtext0: #6c6f85;
-  --ctp-overlay2: #7c7f93;
-  --ctp-overlay1: #8c8fa1;
-  --ctp-overlay0: #9ca0b0;
-  --ctp-surface2: #acb0be;
-  --ctp-surface1: #bcc0cc;
-  --ctp-surface0: #ccd0da;
-  --ctp-rosewater:#dc8a78;
-  --ctp-flamingo: #dd7878;
-  --ctp-pink:     #ea76cb;
-  --ctp-mauve:    #8839ef;
-  --ctp-red:      #d20f39;
-  --ctp-maroon:   #e64553;
-  --ctp-peach:    #fe640b;
-  --ctp-yellow:   #df8e1d;
-  --ctp-green:    #40a02b;
-  --ctp-teal:     #179299;
-  --ctp-sky:      #04a5e5;
-  --ctp-sapphire: #209fb5;
-  --ctp-blue:     #1e66f5;
-  --ctp-lavender: #7287fd;
+/* =============================================================================
+   2026 Midterms — Mobile-first single-page forecast
+   ============================================================================= */
 
-  --bg:       var(--ctp-base);
-  --panel:    var(--ctp-mantle);
-  --panel-2:  var(--ctp-crust);
-  --ink:      var(--ctp-text);
-  --muted:    var(--ctp-subtext0);
-  --line:     var(--ctp-surface0);
-  --accent:   var(--ctp-peach);
-  --accent-2: var(--ctp-blue);
-  --warn:     var(--ctp-yellow);
-  --crit:     var(--ctp-red);
-  --ok:       var(--ctp-green);
-  --severe:   var(--ctp-maroon);
+:root{
+  /* Catppuccin Latte palette — high contrast, light theme */
+  --bg:        #eff1f5;
+  --panel:     #ffffff;
+  --panel-2:   #e6e9ef;
+  --line:      #ccd0da;
+  --ink:       #1c1f2a;
+  --muted:     #5c5f77;
+  --subtle:    #8c8fa1;
+
+  --d:         #1e66f5;   /* Democrat blue */
+  --d-bg:      #d9e3fd;
+  --r:         #d20f39;   /* Republican red */
+  --r-bg:      #f8d6dd;
+  --accent:    #fe640b;
+  --green:     #40a02b;
+  --mauve:     #8839ef;
 
   --mono: ui-monospace, "JetBrains Mono", SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, system-ui, sans-serif;
 }
 
 *{box-sizing:border-box}
 html,body{
   margin:0;padding:0;
   background:var(--bg);color:var(--ink);
-  font-family:var(--sans);line-height:1.55;
+  font-family:var(--sans);line-height:1.5;
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;  /* belt-and-suspenders: no horizontal page scroll */
+  overflow-x:hidden;
 }
-a{color:var(--accent-2);text-decoration:none}
-a:hover{text-decoration:underline}
+a{color:var(--d);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+a:hover{border-bottom-color:var(--d)}
 
-.classification{
-  background:var(--ctp-red);color:#fff;text-align:center;
-  font-family:var(--mono);font-size:12px;letter-spacing:.18em;
-  padding:6px 12px;border-bottom:1px solid var(--ctp-maroon);
-  text-transform:uppercase;
-}
+/* =============================================================================
+   Layout primitives
+   ============================================================================= */
 
-header.site{
-  max-width:1100px;margin:0 auto;padding:40px 24px 16px;
+header{
+  max-width:920px;margin:0 auto;
+  padding:32px 18px 18px;
 }
-header.site h1{
-  font-size:32px;margin:0 0 8px;letter-spacing:-.01em;
-  color:var(--ctp-text);
+header .rule{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  color:var(--mauve);text-transform:uppercase;
+  border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:18px;
 }
-header.site .sub{color:var(--ctp-subtext1);font-size:15px}
-header.site .meta{
-  display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;
-  font-family:var(--mono);font-size:12px;color:var(--muted);
+header h1{
+  margin:0 0 10px;font-size:30px;font-weight:700;line-height:1.15;
+  letter-spacing:-.01em;color:var(--ink);
 }
-header.site .meta span b{color:var(--ink);font-weight:600}
-
-nav.toc{
-  max-width:1100px;margin:8px auto 0;padding:12px 24px;
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  display:flex;flex-wrap:wrap;gap:18px;font-size:13px;font-family:var(--mono);
-  background:var(--ctp-mantle);
-}
-nav.toc a{color:var(--muted)}
-nav.toc a:hover{color:var(--ctp-mauve)}
-
-main{max-width:1100px;margin:0 auto;padding:32px 24px 80px}
-
-section{margin:0 0 56px}
-section h2{
-  font-size:13px;font-family:var(--mono);letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ctp-mauve);border-bottom:1px solid var(--line);padding-bottom:8px;margin:0 0 18px;
-}
-section h3{font-size:18px;margin:24px 0 8px;color:var(--ctp-text)}
-section p{margin:0 0 12px;color:var(--ctp-subtext1)}
-section ul{margin:0 0 12px;padding-left:20px;color:var(--ctp-subtext1)}
-section li{margin:4px 0}
-
-.bluf{
-  background:linear-gradient(180deg, rgba(254,100,11,.10), rgba(254,100,11,.03));
-  border:1px solid rgba(254,100,11,.35);border-left:4px solid var(--accent);
-  padding:18px 20px;border-radius:6px;margin-bottom:18px;
-}
-.bluf .label{
-  font-family:var(--mono);font-size:11px;letter-spacing:.2em;
-  color:var(--accent);text-transform:uppercase;margin-bottom:6px;
-}
-.bluf .body{font-size:17px;color:var(--ink)}
-
-.verdict{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0;
-}
-.verdict .box{
-  background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px;
-  box-shadow:0 1px 0 rgba(76,79,105,.04);
-}
-.verdict .box .k{
-  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
-  color:var(--muted);text-transform:uppercase;margin-bottom:6px;
-}
-.verdict .box .v{font-size:18px;font-weight:600;line-height:1.25;color:var(--ink)}
-.verdict .box .vsm{font-size:13px;color:var(--muted);margin-top:4px}
-
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-
-.card{
-  background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px;
-  box-shadow:0 1px 0 rgba(76,79,105,.04);
-}
-.card h4{margin:0 0 8px;font-size:15px;color:var(--ink)}
-.card p{font-size:14px;color:var(--ctp-subtext1)}
-
-table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 16px;background:var(--panel);border-radius:6px;overflow:hidden}
-th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ctp-subtext1)}
-th{
-  font-family:var(--mono);font-size:11px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--muted);font-weight:600;
-  background:var(--ctp-crust);
-}
-td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
-
-.tag{
-  display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
-  padding:2px 6px;border-radius:3px;text-transform:uppercase;border:1px solid;
-}
-.tag.measured           {color:var(--ctp-green);  border-color:var(--ctp-green)}
-.tag.measured-exterior  {color:var(--ctp-teal);   border-color:var(--ctp-teal)}
-.tag.modeled            {color:var(--ctp-yellow); border-color:var(--ctp-yellow)}
-.tag.hypothesized {color:var(--ctp-mauve);   border-color:var(--ctp-mauve)}
-.tag.ok           {color:var(--ok);          border-color:var(--ok)}
-.tag.warn         {color:var(--warn);        border-color:var(--warn)}
-.tag.severe       {color:var(--ctp-peach);   border-color:var(--ctp-peach)}
-.tag.crit         {color:var(--crit);        border-color:var(--crit)}
-
-.chart-wrap{
-  background:var(--panel);border:1px solid var(--line);border-radius:6px;
-  padding:16px 18px;margin:12px 0 18px;
-}
-.chart-wrap h4{margin:0 0 6px;font-size:14px;color:var(--ink)}
-.chart-wrap .cap{font-size:12px;color:var(--muted);margin:0 0 10px}
-.chart-wrap canvas{width:100% !important;height:320px !important}
-
-/* simulator */
-.sim{
-  display:grid;grid-template-columns:280px 1fr;gap:18px;
-  background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:18px;
-}
-.sim .controls{display:flex;flex-direction:column;gap:14px}
-.sim .controls .preset{display:flex;gap:6px;flex-wrap:wrap}
-.sim .controls .preset button{
-  background:var(--panel-2);color:var(--ink);border:1px solid var(--line);
-  padding:6px 10px;border-radius:4px;font-family:var(--mono);font-size:11px;
-  cursor:pointer;transition:all .12s ease;
-}
-.sim .controls .preset button:hover{
-  border-color:var(--accent);color:var(--accent);
-}
-.sim .controls label{font-size:12px;font-family:var(--mono);color:var(--muted);display:block}
-.sim .controls .row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--ink)}
-.sim .controls input[type=range]{
-  width:100%;
-  accent-color:var(--accent);
-}
-.sim .controls select{
-  width:100%;background:var(--panel-2);color:var(--ink);
-  border:1px solid var(--line);padding:6px 8px;border-radius:4px;
-  font-family:var(--mono);font-size:12px;
-}
-.sim .out{display:flex;flex-direction:column;gap:12px}
-.sim .out .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.sim .out .stat{
-  background:var(--panel-2);border:1px solid var(--line);border-radius:4px;padding:8px 10px;
-}
-.sim .out .stat .k{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
-.sim .out .stat .v{font-size:16px;font-weight:600;font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
-.sim .out canvas{
-  width:100% !important;height:260px !important;
-  background:var(--panel-2);border:1px solid var(--line);border-radius:4px;
+header .lede{
+  margin:0;color:var(--muted);font-size:16px;line-height:1.45;
 }
 
-/* map for consequence model */
-.map-wrap{
-  background:var(--panel);border:1px solid var(--line);border-radius:6px;
-  padding:0;margin:12px 0 18px;overflow:hidden;
-}
-#consequence-map{
-  width:100%;height:460px;
-}
-.map-legend{
-  padding:12px 16px;border-top:1px solid var(--line);
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;
-  font-size:12px;background:var(--ctp-crust);
-}
-.map-legend .swatch{
-  display:inline-block;width:14px;height:14px;border-radius:3px;
-  margin-right:6px;vertical-align:middle;border:1px solid rgba(76,79,105,.2);
+main{
+  max-width:920px;margin:0 auto;
+  padding:8px 18px 60px;
 }
 
-.callout{
-  border-left:3px solid var(--accent-2);background:rgba(30,102,245,.06);
-  padding:12px 14px;border-radius:0 4px 4px 0;margin:12px 0;font-size:14px;color:var(--ctp-subtext1);
+section{margin:32px 0;}
+section h2.section-title{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--mauve);
+  border-bottom:1px solid var(--line);padding-bottom:8px;margin:0 0 14px;
 }
-.callout.warn{border-color:var(--warn);background:rgba(223,142,29,.08)}
-.callout.crit{border-color:var(--crit);background:rgba(210,15,57,.06)}
-.callout b{color:var(--ink)}
+section h3{font-size:17px;margin:24px 0 8px;color:var(--ink)}
+section p{margin:0 0 12px;color:var(--muted);font-size:15px}
+section ul,section ol{margin:0 0 12px;padding-left:22px;color:var(--muted);font-size:15px}
+section li{margin:5px 0}
 
-footer{
-  max-width:1100px;margin:0 auto;padding:24px;border-top:1px solid var(--line);
-  color:var(--muted);font-size:12px;font-family:var(--mono);
+pre{
+  background:var(--panel-2);border:1px solid var(--line);
+  padding:12px 14px;border-radius:6px;
+  font-family:var(--mono);font-size:13px;line-height:1.55;
+  overflow-x:auto;
+  color:var(--ink);
 }
-
 code{
-  background:var(--panel-2);color:var(--ctp-mauve);
+  background:var(--panel-2);color:var(--mauve);
   padding:1px 5px;border-radius:3px;font-family:var(--mono);font-size:.92em;
 }
 
-pre{
-  background:var(--panel-2);color:var(--ink);border:1px solid var(--line);
-  padding:12px 14px;border-radius:4px;font-family:var(--mono);font-size:12px;
-  overflow-x:auto;line-height:1.5;
+footer{
+  max-width:920px;margin:0 auto;padding:24px 18px 40px;
+  border-top:1px solid var(--line);
+  color:var(--subtle);font-size:12px;font-family:var(--mono);line-height:1.6;
+}
+footer a{color:var(--subtle);border-bottom-color:var(--line)}
+
+/* =============================================================================
+   Topline — chambers
+   ============================================================================= */
+
+.topline .chamber{
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:18px;margin:0 0 18px;
 }
 
-/* 2026 midterms — party tags */
-.tag-d, .tag-r, .tag-toss{
-  display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
-  padding:2px 7px;border-radius:3px;text-transform:uppercase;font-weight:600;
-}
-.tag-d    { color:#fff;background:var(--ctp-blue) }
-.tag-r    { color:#fff;background:var(--ctp-red)  }
-.tag-toss { color:var(--ink);background:var(--ctp-surface1) }
-
-/* tighter cells for race tables */
-#senate-table td, #house-table td, #tipping-table td{
-  padding:6px 10px;font-size:12.5px;
-}
-#senate-table th, #house-table th, #tipping-table th{
-  font-size:10px;
+.chamber-head h2{
+  margin:0 0 14px;font-size:22px;color:var(--ink);font-weight:700;
 }
 
-/* canvas wrapper used to anchor the majority-line overlay */
-.canvas-pos{position:relative;width:100%}
-.canvas-pos canvas{display:block}
-
-/* majority-line overlay for distribution charts */
-.maj-overlay{
-  position:absolute;left:0;right:0;top:0;height:100%;
-  pointer-events:none;font-family:var(--mono);
+.who-wins{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;
+  margin:0 0 12px;
 }
-/* The vertical line itself — rendered as an HTML element so it stays
-   pixel-perfect at any device-pixel-ratio.  Anchored from just under the
-   chip down to the x-axis tick area (via --plot-bottom from the plugin). */
-.maj-overlay .maj-line{
-  position:absolute;
-  left:var(--maj-x, 50%);
-  top:32px;
-  height:calc(var(--plot-bottom, 90%) - 32px);
-  width:4px;
-  margin-left:-2px;       /* center the 4px line on --maj-x */
-  background:#000;
-  border-radius:1px;
-  box-shadow:0 0 0 1px rgba(255,255,255,.5);
+.who-wins .side{
+  text-align:center;padding:14px 10px;border-radius:8px;
+  border:2px solid transparent;
 }
-.maj-overlay .maj-chip{
-  position:absolute;
-  left:var(--maj-x, 50%);
-  top:6px;
-  transform:translateX(-50%);
-  background:var(--ctp-text);color:#fff;
-  font-size:11px;font-weight:700;letter-spacing:.04em;
-  padding:5px 10px;border-radius:4px;
-  white-space:nowrap;
-  box-shadow:0 2px 6px rgba(76,79,105,.2);
+.who-wins .side.r{background:var(--r-bg)}
+.who-wins .side.d{background:var(--d-bg)}
+.who-wins .side .label{
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:4px;
 }
-.maj-overlay .maj-chip::after{
-  content:'';position:absolute;left:50%;bottom:-5px;transform:translateX(-50%);
-  border:5px solid transparent;border-top-color:var(--ctp-text);border-bottom:0;
+.who-wins .side.r .label{color:var(--r)}
+.who-wins .side.d .label{color:var(--d)}
+.who-wins .side .prob{
+  font-size:32px;font-weight:800;font-family:var(--mono);
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em;color:var(--ink);
+  line-height:1;
 }
-.maj-overlay .maj-side{
-  position:absolute;top:42px;
-  color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;
-  padding:4px 9px;border-radius:3px;white-space:nowrap;
-  box-shadow:0 1px 3px rgba(76,79,105,.15);
-  max-width:46%;overflow:hidden;text-overflow:ellipsis;
+.who-wins .side.favored{
+  border-color:currentColor;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
 }
-.maj-overlay .maj-r{text-align:right}
-.maj-overlay .maj-d{text-align:left}
-
-/* Default (desktop): R/D labels anchored next to the line */
-.maj-overlay .maj-r{
-  right:calc(100% - var(--maj-x, 50%) + 14px);
-}
-.maj-overlay .maj-d{
-  left:calc(var(--maj-x, 50%) + 14px);
-}
-.maj-overlay .maj-side b{font-weight:800;letter-spacing:.02em}
-
-/* R MAJORITY / D MAJORITY labels at the bottom-inside of each chart.
-   Positioned in the bottom corners of the plot area so they sit over the
-   bars themselves — the user instantly sees which side is which party. */
-.maj-overlay .maj-r-label,
-.maj-overlay .maj-d-label{
-  position:absolute;
-  bottom:calc(100% - var(--plot-bottom, 90%) + 8px);
-  color:#fff;
-  font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.06em;
-  padding:4px 8px;border-radius:3px;white-space:nowrap;
-  box-shadow:0 1px 3px rgba(0,0,0,.3);
-}
-.maj-overlay .maj-r-label{
-  left:calc(var(--plot-left, 8%) + 8px);
-}
-.maj-overlay .maj-d-label{
-  right:calc(100% - var(--plot-right, 92%) + 8px);
+.who-wins .side.r.favored{border-color:var(--r)}
+.who-wins .side.d.favored{border-color:var(--d)}
+.who-wins .vs{
+  font-family:var(--mono);font-size:11px;color:var(--subtle);
+  letter-spacing:.1em;
 }
 
-/* senate cartogram */
-.carto-scroller{
-  width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
+.winbar{
+  position:relative;height:10px;background:var(--r);border-radius:5px;
+  overflow:hidden;margin:6px 0 14px;
 }
-#senate-cartogram{
-  font-size:12px;line-height:1.1;
+.winbar-d{
+  position:absolute;top:0;right:0;height:100%;background:var(--d);
+  width:0%;transition:width .6s ease-out;
 }
-#senate-cartogram > div{
-  transition:transform .12s ease, box-shadow .12s ease;
+
+.seats{
+  display:flex;flex-wrap:wrap;justify-content:space-between;
+  gap:8px 16px;font-size:14px;color:var(--muted);
+  border-top:1px solid var(--line);padding-top:12px;
 }
-#senate-cartogram > div:hover{
-  transform:scale(1.06);
-  box-shadow:0 2px 8px rgba(76,79,105,.2);
-  z-index:2;
+.seats b{color:var(--ink);font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+.footnote{
+  font-size:12px;color:var(--subtle);
+  margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);
+  line-height:1.5;
 }
 
 /* =============================================================================
-   Responsive — tablet (820px) and mobile (600px, 420px)
+   Charts
    ============================================================================= */
 
-@media (max-width: 820px){
-  .verdict{grid-template-columns:repeat(2,1fr)}
-  .grid-2{grid-template-columns:1fr}
-  header.site h1{font-size:24px}
-  header.site .meta{gap:10px;font-size:11px}
-  nav.toc{gap:10px;font-size:11px;padding:10px 16px}
-  main{padding:20px 14px 60px}
-  section{margin:0 0 36px}
-  table{font-size:12px}
-  th,td{padding:6px}
-  .chart-wrap{padding:12px}
-  .chart-wrap canvas{height:280px !important}
+.chart-card{
+  margin-top:18px;padding-top:16px;
+  border-top:1px solid var(--line);
+}
+.chart-title{
+  font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px;
+}
+.chart-caption{
+  font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.45;
+}
+.chart-wrap{
+  position:relative;width:100%;height:240px;
 }
 
-@media (max-width: 600px){
-  /* Tighter typography + spacing */
-  header.site{padding:24px 14px 10px}
-  header.site h1{font-size:20px;letter-spacing:0}
-  header.site .sub{font-size:13px}
-  section h2{font-size:11px}
-  section h3{font-size:15px}
-  section p{font-size:14px}
-  .classification{font-size:10px;letter-spacing:.10em;padding:5px 10px}
+/* =============================================================================
+   Joint outcomes
+   ============================================================================= */
 
-  /* Verdict — bigger numbers, single column at very small */
-  .verdict .box{padding:11px}
-  .verdict .box .v{font-size:22px}
-  .verdict .box .vsm{font-size:12px}
-
-  /* Pre/code blocks — must scroll, not blow out the layout */
-  pre{font-size:11px;padding:10px;white-space:pre;overflow-x:auto}
-  code{font-size:.88em;word-break:break-word}
-
-  /* Majority-line chip & labels — anchor to chart edges, shrink.  Drop the
-     desktop max-width since on mobile the labels sit on opposite sides and
-     don't risk overlapping each other. */
-  .maj-overlay .maj-chip{font-size:10px;padding:4px 7px}
-  .maj-overlay .maj-side{
-    font-size:10px;padding:3px 6px;letter-spacing:.04em;top:36px;
-    max-width:none;overflow:visible;text-overflow:clip;
-  }
-  .maj-overlay .maj-r{
-    right:auto;left:6px;
-  }
-  .maj-overlay .maj-d{
-    left:auto;right:6px;
-  }
-
-  /* Senate cartogram — shrink tiles to fit in the viewport instead of
-     scrolling.  Hide the percentage so the state code stays legible. */
-  .carto-scroller{overflow:visible}
-  #senate-cartogram{
-    min-width:0 !important;max-width:100% !important;margin:8px 0 !important;
-    gap:3px;
-  }
-  #senate-cartogram > div{padding:4px 1px;font-size:10px;border-radius:3px}
-  #senate-cartogram > div > div:first-child{font-size:10px;font-weight:700;line-height:1}
-  #senate-cartogram > div > div:nth-child(2){display:none}
-
-  /* Race tables — hide low-priority columns on phones.
-     Senate columns: 1 State, 2 Incumbent, 3 Rating, 4 Margin, 5 Model P(D), 6 Δ, 7 Notes
-     House columns:  1 District, 2 Incumbent, 3 Rating, 4 Margin, 5 Model P(D), 6 Notes
-     Tipping columns: 1 Rank, 2 District, 3 Rating, 4 P(decisive)
-     Hide: senate cols 4+6+7, house cols 4+6.  Keep: District, Inc party, Rating, Model P(D). */
-  #senate-table th:nth-child(4),  #senate-table td:nth-child(4),
-  #senate-table th:nth-child(6),  #senate-table td:nth-child(6),
-  #senate-table th:nth-child(7),  #senate-table td:nth-child(7),
-  #house-table th:nth-child(4),   #house-table td:nth-child(4),
-  #house-table th:nth-child(6),   #house-table td:nth-child(6){
-    display:none;
-  }
-  #senate-table th,#house-table th,#tipping-table th{font-size:9px;padding:5px 4px}
-  #senate-table td,#house-table td,#tipping-table td{padding:5px 4px;font-size:12px}
-
-  /* Footer */
-  footer{padding:16px;font-size:11px}
+.joint-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:10px;
+}
+.joint-cell{
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:14px 12px;text-align:center;
+}
+.joint-pct{
+  font-size:22px;font-weight:700;font-family:var(--mono);
+  font-variant-numeric:tabular-nums;color:var(--ink);
+}
+.joint-lbl{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  color:var(--muted);text-transform:uppercase;margin-top:4px;line-height:1.3;
 }
 
-@media (max-width: 420px){
-  .verdict{grid-template-columns:1fr}
-  /* On very narrow phones, charts get even shorter to keep the page navigable */
-  .chart-wrap canvas{height:240px !important}
-  .chart-wrap h4{font-size:13px}
-  .chart-wrap .cap{font-size:11px}
+/* =============================================================================
+   Race lists — card-based, no tables (mobile-friendly)
+   ============================================================================= */
+
+.race-list{
+  display:flex;flex-direction:column;gap:8px;
+}
+.race-card{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:10px;
+  background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:10px 12px;
+}
+.race-card .race-id{
+  font-family:var(--mono);font-weight:700;font-size:13px;color:var(--ink);
+  letter-spacing:.02em;min-width:64px;
+}
+.race-card .race-meta{
+  display:flex;flex-direction:column;gap:2px;min-width:0;
+}
+.race-card .race-rating{
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);
+}
+.race-card .race-note{
+  font-size:12px;color:var(--subtle);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.race-card .race-prob{
+  font-family:var(--mono);font-weight:700;font-size:14px;
+  font-variant-numeric:tabular-nums;
+  padding:5px 9px;border-radius:5px;color:#fff;min-width:60px;text-align:center;
+}
+.race-card.r-led{border-left:4px solid var(--r)}
+.race-card.d-led{border-left:4px solid var(--d)}
+
+/* =============================================================================
+   Tipping point
+   ============================================================================= */
+
+.tip-list{
+  list-style:none;padding:0;margin:0;
+  display:flex;flex-direction:column;gap:6px;
+  counter-reset:tip;
+}
+.tip-list li{
+  counter-increment:tip;
+  display:grid;
+  grid-template-columns:32px auto 1fr auto;
+  align-items:center;gap:10px;
+  background:var(--panel);border:1px solid var(--line);border-radius:6px;
+  padding:8px 12px;font-size:13px;
+}
+.tip-list li::before{
+  content:counter(tip);
+  font-family:var(--mono);font-size:11px;color:var(--subtle);
+  font-variant-numeric:tabular-nums;
+}
+.tip-list .tip-id{font-family:var(--mono);font-weight:700;color:var(--ink)}
+.tip-list .tip-rating{
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);
+}
+.tip-list .tip-pct{
+  font-family:var(--mono);font-weight:700;color:var(--ink);
+  font-variant-numeric:tabular-nums;
+}
+
+/* =============================================================================
+   Sources
+   ============================================================================= */
+.src{list-style:none;padding:0}
+.src li{padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+.src li:last-child{border-bottom:0}
+
+/* =============================================================================
+   Wider screens
+   ============================================================================= */
+
+@media (min-width: 720px){
+  header{padding:48px 24px 24px}
+  header h1{font-size:38px}
+  header .lede{font-size:18px}
+  main{padding:8px 24px 80px}
+
+  .topline{
+    display:grid;grid-template-columns:1fr 1fr;gap:18px;
+  }
+  .topline .chamber{margin:0}
+
+  .who-wins .side .prob{font-size:36px}
+
+  .joint-grid{grid-template-columns:repeat(4,1fr)}
+
+  .race-card{
+    grid-template-columns:auto 1fr auto;
+    gap:14px;
+    padding:12px 16px;
+  }
+  .race-card .race-note{font-size:13px}
+  .chart-wrap{height:280px}
+}
+
+@media (min-width: 1000px){
+  header{padding:60px 24px 28px}
+  header h1{font-size:44px}
 }
